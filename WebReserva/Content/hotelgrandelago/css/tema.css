@@ -1,0 +1,43 @@
+.header_mobile,
+.header_mobile .header_menu,
+#footer .footer_bottom,
+#footer .footer_top,
+.ui-datepicker .ui-datepicker-calendar thead th,
+.bootstrap-select.btn-group.awe-select .dropdown-menu ul li.selected a { background-color: #1947a3; }
+.bootstrap-select.btn-group.awe-select .dropdown-menu ul li a:hover,
+.ui-datepicker .ui-datepicker-calendar td a.ui-state-active,
+.ui-datepicker .ui-datepicker-calendar td a:hover,
+.ui-datepicker .ui-datepicker-header,
+#footer { background-color:#000f2d; }
+.ui-datepicker .ui-datepicker-calendar thead th,
+#footer .footer_bottom,
+#footer .footer_center .widget-logo .text p,
+#footer .footer_center .widget-logo .text p a { color: #fff; }
+.preloader-dot,
+.bootstrap-select.btn-group.awe-select .dropdown-menu ul li a:hover,
+.bootstrap-select.btn-group.awe-select .dropdown-menu ul li.selected a { border-color: #000f2d; }
+.room_item-6 .text .price { color: #333; }
+.contact .contact-form .field-text,
+.contact .contact-form .field-textarea { border-color: #1947a3; }
+.awe-btn.awe-btn-13:hover { border-color: #1947a3; background-color: #1947a3; }
+.header_content,
+.check-availability:before { background-color: #1947a3; opacity: 0.95; }
+
+.hotel-1 { background-image: url(/Content/hotelgrandelago/img/hotel-1.jpg); background-size: cover; }
+
+.fundo-1 { background-color: #f1f1f1; }
+
+/*TODO remover a gambiarra e ajustar tamanho das imagens */
+.accomd-modations-content .accomd-modations-room { height: 200px; overflow: hidden; }
+
+.room_item-6 .text { background-color: #1947a3; }
+.room-wrap-6 .room_item-6 { background-position: right; }
+.room_item-6 { background-size: initial; }
+
+.sub-banner .text h2 { background-color: #1947a3; display: inline-block; padding: 0 15px; }
+
+@media screen and (max-width:991px) {
+	.home-about .text { margin-bottom: 30px; }
+	.accomd-modations-header h2.heading,
+	.accomd-modations-header p { color: #fff; }
+}

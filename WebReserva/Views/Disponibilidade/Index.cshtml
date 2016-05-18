@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Disponibilidade - " + Model.Nome;
+    ViewBag.TenantName = Model.Nome;
+    ViewBag.TenantId = Model.Id;
+    ViewBag.TenantUrl = Model.HostUrl;
+    ViewBag.Tema = Model.Tema;
+    ViewBag.ImgLogo = Model.ImgLogo;
+    ViewBag.Facebook = Model.Facebook;
+    ViewBag.Twitter = Model.Twitter;
+    ViewBag.Instagram = Model.Instagram;
+    ViewBag.Telefone = Model.Telefone;
+    ViewBag.EmailAdministrador = Model.EmailAdministrador;
+    ViewBag.Erro = false;
+}
+
+@section scripts {
+    <script src="~/Content/global/angular/wrSectionAvailabilityController.js"></script>
+    <script src="~/Content/global/js/datepicker-pt-BR.js"></script>
+}
+
+<section class="section-sub-banner awe-parallax hotel-1">
+    <div class="awe-overlay"></div>
+    <div class="sub-banner">
+        <div class="container">
+            <div class="text text-center">
+                <h2>Checar Disponibilidade</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="no-negative-margin">
+    @Html.Action("SectionAvailability", "Home")
+</div>
+
+@Html.Action("SectionRoom")

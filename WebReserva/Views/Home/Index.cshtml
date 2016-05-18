@@ -1,0 +1,32 @@
+﻿@model WebReserva.Models.WrHotel
+@{
+    ViewBag.Title = "Home - " + Model.Nome;
+    ViewBag.TenantName = Model.Nome;
+    ViewBag.TenantId = Model.Id;
+    ViewBag.TenantUrl = Model.HostUrl;
+    ViewBag.Tema = Model.Tema;
+    ViewBag.ImgLogo = Model.ImgLogo;
+    ViewBag.Facebook = Model.Facebook;
+    ViewBag.Twitter = Model.Twitter;
+    ViewBag.Instagram = Model.Instagram;
+    ViewBag.Telefone = Model.Telefone;
+    ViewBag.EmailAdministrador = Model.EmailAdministrador;
+    ViewBag.Erro = false;
+}
+
+@section scripts {
+    <script src="~/Content/global/angular/wrSectionAvailabilityController.js"></script>
+    <script src="~/Content/global/js/datepicker-pt-BR.js"></script>
+    <script>
+        var hostUrl = window.location.pathname.replace(/\//g, '');
+        $('.accomd-modations-room .img a').attr('href', hostUrl + '/detalhes/pacote/1');
+    </script>
+}
+
+@Html.Action("SectionSlider")
+
+@Html.Action("SectionAvailability")
+
+@Html.Action("SectionAbout")
+
+@Html.Action("SectionPackage")

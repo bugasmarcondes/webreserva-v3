@@ -1,0 +1,98 @@
+﻿@model Int32
+@{
+    ViewBag.Title = "Erro " + Model;
+    ViewBag.Tema = "/Content/global/css/tema.css";
+    ViewBag.ImgLogo = "/Content/global/img/logo.png";
+    ViewBag.Facebook = "";
+    ViewBag.Twitter = "";
+    ViewBag.Instagram = "";
+    ViewBag.Telefone = "";
+    ViewBag.EmailAdministrador = "";
+    ViewBag.Erro = true;
+}
+
+<section class="section-sub-banner awe-parallax bg-9">
+    <div class="awe-overlay"></div>
+    <div class="sub-banner">
+        <div class="container">
+            <div class="text text-center">
+                <h2>Erro</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-errors-exceptions">
+    <div class="container">
+        <div class="col-lg-12">
+            @switch (Model)
+            {
+                case 401:
+                    {
+                        <h1>401</h1>
+                        <h2>Oops! Algo deu errado.</h2>
+                        <p>Estamos consertando! Por favor volte em instantes.</p>
+                        <p>
+                            <a href="#" onclick="javascript: window.history.back();" class="btn btn-large btn-primary">
+                                &nbsp;
+                                Voltar
+                            </a>
+                        </p>
+                    }
+                    break;
+                case 403:
+                    {
+                        <h1>403</h1>
+                        <h2>Oops! Algo deu errado.</h2>
+                        <p>Desculpe, um erro ocorreu! Por que não tentar voltar para a página <a href="#" onclick="javascript: window.history.back();">anterior</a>?</p>
+                        <p>
+                            <a href="#" onclick="javascript: window.history.back();" class="btn btn-large btn-primary">
+                                &nbsp;
+                                Voltar
+                            </a>
+                        </p>
+                    }
+                    break;
+                case 404:
+                    {
+                        <h1>404</h1>
+                        <h2>Oops! Você está perdido.</h2>
+                        <p>Desculpe, o endereço requisitado não foi encontrado. Por que não tentar voltar para a página <a href="#" onclick="javascript: window.history.back();">anterior</a>?</p>
+                        <p>
+                            <a href="#" onclick="javascript: window.history.back();" class="btn btn-large btn-primary">
+                                &nbsp;
+                                Voltar
+                            </a>
+                        </p>
+                    }
+                    break;
+                case 500:
+                    {
+                        <h1>500</h1>
+                        <h2>Oops! Algo deu errado.</h2>
+                        <p>Estamos consertando! Por favor volte em instantes.</p>
+                        <p>
+                            <a href="#" onclick="javascript: window.history.back();" class="btn btn-large btn-primary">
+                                &nbsp;
+                                Voltar
+                            </a>
+                        </p>
+                    }
+                    break;
+                default:
+                    {
+                        <h1>Oops!</h1>
+                        <h2>Oops! Algo deu errado.</h2>
+                        <p>Estamos consertando! Por favor volte em instantes.</p>
+                        <p>
+                            <a href="#" onclick="javascript: window.history.back();" class="btn btn-large btn-primary">
+                                &nbsp;
+                                Voltar
+                            </a>
+                        </p>
+                    }
+                    break;
+            }
+        </div>
+    </div>
+</section>

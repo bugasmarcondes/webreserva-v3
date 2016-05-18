@@ -1,0 +1,34 @@
+﻿<section class="section-check-availability" ng-controller="wrSectionAvailabilityController">
+    <div class="container">
+        <div class="check-availability">
+            <div class="row">
+                <div class="col-lg-3">
+                    <h2>CHECAR DISPONIBILIDADE</h2>
+                </div>
+                <div class="col-lg-9">
+                    <form  novalidate name="scaForm" ng-submit="checkAvailability()">
+                        <div class="availability-form">
+                            <input type="text" name="scaCheckIn" class="awe-calendar from" placeholder="Check-in" ng-model="scaForm.checkIn" required>
+                            <input type="text" name="scaCheckOut" class="awe-calendar to" placeholder="Check-out" ng-model="scaForm.checkOut" required>
+                            <select class="awe-select" name="scaAdultos" ng-model="scaForm.adultos" required>
+                                <option value="">Adultos</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <select class="awe-select" name="scaCriancas" ng-model="scaForm.criancas">
+                                <option value="">Crianças</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <div class="vailability-submit">
+                                <button class="awe-btn awe-btn-13">Pesquisar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

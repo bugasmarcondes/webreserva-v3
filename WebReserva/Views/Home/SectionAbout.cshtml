@@ -1,0 +1,27 @@
+﻿@model WebReserva.ViewModels.SectionAboutViewModel
+
+@if (Model != null)
+{
+    <section class="section-home-about bg-white">
+        <div class="container">
+            <div class="home-about">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="img">
+                            <img src="@Model.ImgSobre01" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="text">
+                            <h2 class="heading">Sobre</h2>
+                            @if (!string.IsNullOrEmpty(Model.DescricaoHotel))
+                            {
+                                @Html.Raw(Model.DescricaoHotel)
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}

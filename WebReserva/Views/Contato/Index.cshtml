@@ -1,0 +1,58 @@
+﻿@model WebReserva.Models.WrHotel
+@{
+    ViewBag.Title = "Contato - " + Model.Nome;
+    ViewBag.TenantName = Model.Nome;
+    ViewBag.TenantId = Model.Id;
+    ViewBag.TenantUrl = Model.HostUrl;
+    ViewBag.Tema = Model.Tema;
+    ViewBag.ImgLogo = Model.ImgLogo;
+    ViewBag.Facebook = Model.Facebook;
+    ViewBag.Twitter = Model.Twitter;
+    ViewBag.Instagram = Model.Instagram;
+    ViewBag.Telefone = Model.Telefone;
+    ViewBag.LatitudeLongitude = Model.LatitudeLongitude;
+    ViewBag.EmailAdministrador = Model.EmailAdministrador;
+    ViewBag.Erro = false;
+}
+
+@section scripts {
+    <script src="~/Content/global/angular/wrSectionContactController.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true"></script>
+}
+
+<section class="section-sub-banner awe-parallax hotel-1">
+    <div class="awe-overlay"></div>
+    <div class="sub-banner">
+        <div class="container">
+            <div class="text text-center">
+                <h2>Contato</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-contact">
+    <div class="container">
+        <div class="contact">
+            <div class="row">
+                @Html.Action("SectionContact")
+
+                <div class="col-md-6 col-lg-5 col-lg-offset-1">
+                    <div class="text">
+                        <p>Ou se preferir pode entrar em contato através das seguintes formas:</p>
+                        <ul>
+                            <li><i class="icon fa fa-phone"></i> @ViewBag.Telefone</li>
+                            <li><i class="icon fa fa-envelope-o"></i> @ViewBag.EmailAdministrador</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-map">
+    <div class="contact-map">
+        <div id="map" data-locations="@ViewBag.LatitudeLongitude" data-center="@ViewBag.LatitudeLongitude"></div>
+    </div>
+</section>

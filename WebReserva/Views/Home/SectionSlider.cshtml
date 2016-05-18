@@ -1,0 +1,34 @@
+﻿@model IEnumerable<WebReserva.Models.WrBloqueioData>
+
+@if (Model.Count() == 0)
+{
+    <section class="section-sub-banner awe-parallax hotel-1">
+        <div class="awe-overlay"></div>
+        <div class="sub-banner">
+            <div class="container">
+                <div class="text text-center">
+                    <h2>BEM-VINDO</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+else
+{
+    <section class="section-slider">
+        <div class="banner-slider" id="banner-slider">
+            @foreach (var item in Model)
+            {
+                <div class="slider-item text-center" data-image="@item.Img01">
+                    <!--div class="slider-text">
+                        <h2 class="slider-caption slider-caption-1">@item.Titulo</h2>
+                        <span class="slider-caption-sub slider-caption-sub-1">@item.DescricaoSlider</span>
+                        <p>
+                            <a href="#" class="awe-btn awe-btn-12 awe-btn-slider">RESERVAR</a>
+                        </p>
+                    </!div-->
+                </div>
+            }
+        </div>
+    </section>
+}

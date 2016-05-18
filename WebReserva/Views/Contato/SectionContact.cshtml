@@ -1,0 +1,32 @@
+﻿<div class="col-md-6 col-lg-6">
+    <p>Dúvidas, sugestões ou reclamações são bem vindas.</p>
+    <p>Envie-nos uma mensagem agora mesmo!</p>
+    <div class="contact-form" ng-controller="wrSectionContactController">
+        <form novalidate name="smForm" ng-submit="sendMessage()">
+            <div class="row">
+                <div class="col-sm-6">
+                    <input type="text" class="field-text" name="smNome" placeholder="Nome" ng-model="smForm.nome" required>
+                    <span class="text-danger" ng-show="smForm.smNome.$dirty && smForm.smNome.$error.required">Obrigatório</span>
+                </div>
+                <div class="col-sm-6">
+                    <input type="email" class="field-text" name="smEmail" placeholder="Email" ng-model="smForm.email" required>
+                    <span class="text-danger" ng-show="smForm.smEmail.$dirty && smForm.smEmail.$error.required">Obrigatório</span>
+                    <span class="text-danger" ng-show="smForm.smEmail.$dirty && smForm.smEmail.$error.email">Email inválido</span>
+                </div>
+                <div class="col-sm-12">
+                    <input type="text" class="field-text" name="smAssunto" placeholder="Assunto" ng-model="smForm.assunto" required ng-minlength="10">
+                    <span class="text-danger" ng-show="smForm.smAssunto.$dirty && smForm.smAssunto.$error.required">Obrigatório</span>
+                    <span class="text-danger" ng-show="smForm.smAssunto.$dirty && smForm.smAssunto.$error.minlength">Mínimo de 10 caracteres</span>
+                </div>
+                <div class="col-sm-12">
+                    <textarea cols="30" rows="10" name="smMensagem" class="field-textarea" placeholder="Escreva sua mensagem" ng-model="smForm.mensagem" required ng-minlength="30"></textarea>
+                    <span class="text-danger" ng-show="smForm.smMensagem.$dirty && smForm.smMensagem.$error.required">Obrigatório</span>
+                    <span class="text-danger" ng-show="smForm.smMensagem.$dirty && smForm.smMensagem.$error.minlength">Mínimo de 30 caracteres</span>
+                </div>
+                <div class="col-sm-6">
+                    <button type="submit" class="awe-btn awe-btn-13" ng-disabled="smForm.$invalid">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

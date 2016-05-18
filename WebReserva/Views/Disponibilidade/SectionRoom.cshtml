@@ -1,0 +1,50 @@
+﻿@model List<WebReserva.Models.WrTipoApartamento>
+
+@if (Model.Any())
+{
+    <section class="section-room bg-white">
+        <div class="container">
+            <div class="room-wrap-6">
+                @foreach (var item in Model)
+                {
+                    <div class="room_item-6" data-background="@item.Img01">
+                        <div class="text">
+                            <h2><a href="detalhes/acomodacao/1">@item.Nome</a></h2>
+                            <!--span class="price">Start form <span class="amout">$120</span> per day</!--span-->
+                            <p>@item.Descricao</p>
+                            <ul>
+                                @if (string.IsNullOrEmpty(item.DestaqueTitulo))
+                                {
+                                    <li>@item.DestaqueTitulo</li>
+                                }
+                                @if (string.IsNullOrEmpty(item.OpcionalTitulo01))
+                                {
+                                    <li>@item.OpcionalTitulo01</li>
+                                }
+                                @if (string.IsNullOrEmpty(item.OpcionalTitulo02))
+                                {
+                                    <li>@item.OpcionalTitulo02</li>
+                                }
+                                @if (string.IsNullOrEmpty(item.OpcionalTitulo03))
+                                {
+                                    <li>@item.OpcionalTitulo03</li>
+                                }
+                            </ul>
+                            <a href="detalhes/acomodacao/1" class="awe-btn awe-btn-13">Detalhes</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}
+else
+{
+    <section class="section-room bg-white">
+        <div class="container">
+            <div class="room-wrap-6">
+                <p>Nenhuma acomodação encontrada!</p>
+            </div>
+        </div>
+    </section>
+}

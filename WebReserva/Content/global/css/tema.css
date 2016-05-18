@@ -1,0 +1,10 @@
+﻿.header_mobile,
+.header_mobile .header_menu,
+#footer .footer_bottom,
+#footer .footer_top,
+.header_content{background-color:rgba(0,50,113,.85)}
+#footer{background-color:rgba(0,50,113,.85)}
+#footer .footer_bottom,
+#footer .footer_center .widget-logo .text p,
+#footer .footer_center .widget-logo .text p a{color:#fff}
+.preloader-dot{border-color:rgba(0,50,113,.85);}
