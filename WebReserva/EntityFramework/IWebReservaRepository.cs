@@ -13,6 +13,8 @@ namespace WebReserva.EntityFramework
         SectionAboutViewModel GetSectionAbout(int wrHotelId);
         bool SendEmail(SectionContactViewModel newEmail);
         List<SectionPackageViewModel> GetSectionPackage(int wrHotelId);
+        //TODO remover
         List<WrTipoApartamento> GetSectionRoom(int wrHotelId);
+        List<SectionRoomViewModel> GetAvailability(SectionAvailabilityViewModel sectionAvailability);
     }
 }

@@ -163,11 +163,35 @@ namespace WebReserva.EntityFramework
             return true;
         }
 
+        //TODO remover
         public List<WrTipoApartamento> GetSectionRoom(int wrHotelId)
         {
             var acomodacoes = _context.WrTipoApartamentos.ToList();
 
             return acomodacoes;
+        }
+
+        //TODO corrigir query, criar campo para soma de qtd
+        public List<SectionRoomViewModel> GetAvailability(SectionAvailabilityViewModel sectionAvailability)
+        {
+            var availability = (from a in _context.WrDisponibilidades
+                                where a.Data >= sectionAvailability.CheckIn &&
+                                      a.Data <= sectionAvailability.CheckOut &&
+                                      a.Quantidade > 0 &&
+                                      a.WrTipoApartamento.WrHotelId == sectionAvailability.WrHotelId
+                                select new SectionRoomViewModel()
+                                {
+                                    RoomId = a.WrTipoApartamentoId,
+                                    Nome = a.WrTipoApartamento.Nome,
+                                    Descricao = a.WrTipoApartamento.Descricao,
+                                    Img01 = a.WrTipoApartamento.Img01,
+                                    DestaqueTitulo = a.WrTipoApartamento.DestaqueTitulo,
+                                    OpcionalTitulo01 = a.WrTipoApartamento.OpcionalTitulo01,
+                                    OpcionalTitulo02 = a.WrTipoApartamento.OpcionalTitulo02,
+                                    OpcionalTitulo03 = a.WrTipoApartamento.OpcionalTitulo03
+                                }).ToList();
+
+            return availability;
         }
     }
 }

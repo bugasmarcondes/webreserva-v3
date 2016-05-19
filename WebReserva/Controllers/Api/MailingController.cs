@@ -32,7 +32,6 @@ namespace WebReserva.Controllers.Api
             {
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
             }
-            
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model List<WebReserva.Models.WrTipoApartamento>
+﻿@model List<WebReserva.ViewModels.SectionRoomViewModel>
 
 @if (Model.Any())
 {
@@ -9,7 +9,7 @@
                 {
                     <div class="room_item-6" data-background="@item.Img01">
                         <div class="text">
-                            <h2><a href="detalhes/acomodacao/1">@item.Nome</a></h2>
+                            <h2><a href="detalhes/acomodacao/@item.RoomId">@item.Nome</a></h2>
                             <!--span class="price">Start form <span class="amout">$120</span> per day</!--span-->
                             <p>@item.Descricao</p>
                             <ul>
@@ -30,7 +30,7 @@
                                     <li>@item.OpcionalTitulo03</li>
                                 }
                             </ul>
-                            <a href="detalhes/acomodacao/1" class="awe-btn awe-btn-13">Detalhes</a>
+                            <a href="detalhes/acomodacao/@item.RoomId" class="awe-btn awe-btn-13">Detalhes</a>
                         </div>
                     </div>
                 }
@@ -43,7 +43,7 @@ else
     <section class="section-room bg-white">
         <div class="container">
             <div class="room-wrap-6">
-                <p>Nenhuma acomodação encontrada!</p>
+                <h2>Período indisponível!</h2>
             </div>
         </div>
     </section>

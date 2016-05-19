@@ -251,10 +251,12 @@
     <Compile Include="Models\WrTipoApartamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\PageAvailabilityViewModel.cs" />
     <Compile Include="ViewModels\SectionAboutViewModel.cs" />
     <Compile Include="ViewModels\SectionAvailabilityViewModel.cs" />
     <Compile Include="ViewModels\SectionContactViewModel.cs" />
     <Compile Include="ViewModels\SectionPackageViewModel.cs" />
+    <Compile Include="ViewModels\SectionRoomViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\areiaquecanta\css\tema.css" />
@@ -377,6 +379,7 @@
     <None Include="Properties\PublishProfiles\webreserva-v3 - Web Deploy.pubxml" />
     <Content Include="Views\Detalhes\Acomodacao.cshtml" />
     <Content Include="Views\Detalhes\Pacote.cshtml" />
+    <Content Include="Views\Disponibilidade\SectionAvailability.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

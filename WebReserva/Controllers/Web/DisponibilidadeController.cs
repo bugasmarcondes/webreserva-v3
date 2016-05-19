@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebReserva.EntityFramework;
+using WebReserva.ViewModels;
 
 namespace WebReserva.Controllers.Web
 {
@@ -16,16 +17,41 @@ namespace WebReserva.Controllers.Web
             _repository = repository;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string checkin, string checkout, string adultos, string criancas)
         {
-            return View(Tenant);
+            List<SectionRoomViewModel> sectionRoomList = null;
+
+            var sectionAvailability = new SectionAvailabilityViewModel()
+            {
+                CheckIn = Convert.ToDateTime(checkin),
+                CheckOut = Convert.ToDateTime(checkout),
+                Adultos = Convert.ToInt32(adultos),
+                Criancas = Convert.ToInt32(criancas),
+                WrHotelId = Tenant.Id
+            };
+
+            if (sectionAvailability != null)
+            {
+                sectionRoomList = _repository.GetAvailability(sectionAvailability);
+            }
+
+            var page = new PageAvailabilityViewModel()
+            {
+                WrHotel = Tenant,
+                SectionAvailability = sectionAvailability,
+                SectionRoomList = sectionRoomList
+            };
+
+            return View(page);
         }
 
+        /*
         public ActionResult SectionRoom()
         {
             var acomodacoes = _repository.GetSectionRoom(Tenant.Id);
 
             return PartialView(acomodacoes);
         }
+        */
     }
 }

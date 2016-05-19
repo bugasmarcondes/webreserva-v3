@@ -1,15 +1,16 @@
-﻿@{
-    ViewBag.Title = "Disponibilidade - " + Model.Nome;
-    ViewBag.TenantName = Model.Nome;
-    ViewBag.TenantId = Model.Id;
-    ViewBag.TenantUrl = Model.HostUrl;
-    ViewBag.Tema = Model.Tema;
-    ViewBag.ImgLogo = Model.ImgLogo;
-    ViewBag.Facebook = Model.Facebook;
-    ViewBag.Twitter = Model.Twitter;
-    ViewBag.Instagram = Model.Instagram;
-    ViewBag.Telefone = Model.Telefone;
-    ViewBag.EmailAdministrador = Model.EmailAdministrador;
+﻿@model WebReserva.ViewModels.PageAvailabilityViewModel
+@{
+    ViewBag.Title = "Disponibilidade - " + Model.WrHotel.Nome;
+    ViewBag.TenantName = Model.WrHotel.Nome;
+    ViewBag.TenantId = Model.WrHotel.Id;
+    ViewBag.TenantUrl = Model.WrHotel.HostUrl;
+    ViewBag.Tema = Model.WrHotel.Tema;
+    ViewBag.ImgLogo = Model.WrHotel.ImgLogo;
+    ViewBag.Facebook = Model.WrHotel.Facebook;
+    ViewBag.Twitter = Model.WrHotel.Twitter;
+    ViewBag.Instagram = Model.WrHotel.Instagram;
+    ViewBag.Telefone = Model.WrHotel.Telefone;
+    ViewBag.EmailAdministrador = Model.WrHotel.EmailAdministrador;
     ViewBag.Erro = false;
 }
 
@@ -30,7 +31,7 @@
 </section>
 
 <div class="no-negative-margin">
-    @Html.Action("SectionAvailability", "Home")
+    @Html.Partial("SectionAvailability", Model.SectionAvailability)
 </div>
 
-@Html.Action("SectionRoom")
+@Html.Partial("SectionRoom", Model.SectionRoomList)
