@@ -23,8 +23,8 @@ namespace WebReserva.Controllers.Web
 
             var sectionAvailability = new SectionAvailabilityViewModel()
             {
-                CheckIn = Convert.ToDateTime(checkin),
-                CheckOut = Convert.ToDateTime(checkout),
+                CheckIn = Convert.ToDateTime(checkin, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat),
+                CheckOut = Convert.ToDateTime(checkout, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat),
                 Adultos = Convert.ToInt32(adultos),
                 Criancas = Convert.ToInt32(criancas),
                 WrHotelId = Tenant.Id
