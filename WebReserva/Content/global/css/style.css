@@ -21,3 +21,5 @@ iframe[name='google_conversion_frame'] {
 .ui-widget-content .ui-state-default, 
 .ui-widget-header .ui-state-default { color: #333; }
 .no-negative-margin .check-availability { margin: 0; }
+.room_item-6 .text p.p-indisponivel { color: #333; }
+.txt-white { color: #fff; }

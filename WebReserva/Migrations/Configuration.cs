@@ -18,7 +18,7 @@ namespace WebReserva.Migrations
                 new WrHotel
                 {
                     Id = 1,
-                    Descricao = "<p>O Hotel Grande Lago foi totalmente modificado e está adequado aos padrões internacionais de Hotelaria e sua capacidade foi ampliada, contando agora com 20 unidades habitacionais.</p><br><p>Todas as nossas suítes possuem um banheiro moderno e uma charmosa salinha, também contam com TV, frigobar, ar-condicionado, telefone com tarifador automático e camas box.</p><br><p>Dispomos ainda de internet wireless gratuita em todas as áreas do hotel e restaurante.</p>",
+                    Descricao = "<p>O Hotel Grande Lago foi totalmente modificado e está adequado aos padrões internacionais de Hotelaria e sua capacidade foi ampliada, contando agora com 20 unidades habitacionais.</p><p>Todas as nossas suítes possuem um banheiro moderno e uma charmosa salinha, também contam com TV, frigobar, ar-condicionado, telefone com tarifador automático e camas box.</p><p>Dispomos ainda de internet wireless gratuita em todas as áreas do hotel e restaurante.</p>",
                     Nome = "Hotel Grande Lago",
                     HostUrl = "hotelgrandelago",
                     ImgLogo = "/Content/hotelgrandelago/img/logo.png",
@@ -39,7 +39,7 @@ namespace WebReserva.Migrations
                 new WrHotel
                 {
                     Id = 2,
-                    Descricao = "<p>O Beach Hotel Maresias oferece uma localização única em Maresias. Considerado pé na areia, fica de frente para o mar e tem a maioria dos apartamentos com vista para a praia. Apenas uma área gramada separa os apartamentos da areia.</p><br><p>Em termos de lazer, o hotel conta com piscina e sauna, de frente para o mar, playground, salão de jogos, quadra de tênis e serviço de praia completo. Ficar hospedado no Beach Hotel Maresias é como estar em um resort, muitas mordomias, praia, sol, mas a pouco mais de duas horas de São Paulo.</p><br><p>Outro diferencial está nos apartamentos, amplos, com varanda de frente para o mar, tanto no andar térreo quanto no primeiro andar. O hotel oferece unidades também com vista para a Serra do Mar.</p>",
+                    Descricao = "<p>O Beach Hotel Maresias oferece uma localização única em Maresias. Considerado pé na areia, fica de frente para o mar e tem a maioria dos apartamentos com vista para a praia. Apenas uma área gramada separa os apartamentos da areia.</p><p>Em termos de lazer, o hotel conta com piscina e sauna, de frente para o mar, playground, salão de jogos, quadra de tênis e serviço de praia completo. Ficar hospedado no Beach Hotel Maresias é como estar em um resort, muitas mordomias, praia, sol, mas a pouco mais de duas horas de São Paulo.</p><p>Outro diferencial está nos apartamentos, amplos, com varanda de frente para o mar, tanto no andar térreo quanto no primeiro andar. O hotel oferece unidades também com vista para a Serra do Mar.</p>",
                     Nome = "Beach Hotel Maresias",
                     HostUrl = "maresiasbeachhotel",
                     ImgLogo = "/Content/maresiasbeachhotel/img/logo.png",

@@ -9,6 +9,12 @@ namespace WebReserva.ViewModels
         public DateTime CheckOut { get; set; }
         public int Adultos { get; set; }
         public int Criancas { get; set; }
+        public double TotalDias {
+            get
+            {
+                return (CheckOut - CheckIn).TotalDays;
+            }
+        }
         public int WrHotelId { get; set; }
     }
 }

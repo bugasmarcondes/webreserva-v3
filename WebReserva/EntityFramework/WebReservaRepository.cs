@@ -171,24 +171,27 @@ namespace WebReserva.EntityFramework
             return acomodacoes;
         }
 
-        //TODO corrigir query, criar campo para soma de qtd
         public List<SectionRoomViewModel> GetAvailability(SectionAvailabilityViewModel sectionAvailability)
         {
             var availability = (from a in _context.WrDisponibilidades
                                 where a.Data >= sectionAvailability.CheckIn &&
-                                      a.Data <= sectionAvailability.CheckOut &&
-                                      a.Quantidade > 0 &&
-                                      a.WrTipoApartamento.WrHotelId == sectionAvailability.WrHotelId
-                                select new SectionRoomViewModel()
+                                      a.Data < sectionAvailability.CheckOut &&
+                                      a.Quantidade > 0
+                                group a by a.WrTipoApartamentoId into g
+                                select new SectionRoomViewModel
                                 {
-                                    RoomId = a.WrTipoApartamentoId,
-                                    Nome = a.WrTipoApartamento.Nome,
-                                    Descricao = a.WrTipoApartamento.Descricao,
-                                    Img01 = a.WrTipoApartamento.Img01,
-                                    DestaqueTitulo = a.WrTipoApartamento.DestaqueTitulo,
-                                    OpcionalTitulo01 = a.WrTipoApartamento.OpcionalTitulo01,
-                                    OpcionalTitulo02 = a.WrTipoApartamento.OpcionalTitulo02,
-                                    OpcionalTitulo03 = a.WrTipoApartamento.OpcionalTitulo03
+                                    RoomId = g.Key,
+                                    Nome = g.FirstOrDefault().WrTipoApartamento.Nome,
+                                    Descricao = g.FirstOrDefault().WrTipoApartamento.Descricao,
+                                    Img01 = g.FirstOrDefault().WrTipoApartamento.Img01,
+                                    DestaqueTitulo = g.FirstOrDefault().WrTipoApartamento.DestaqueTitulo,
+                                    OpcionalTitulo01 = g.FirstOrDefault().WrTipoApartamento.OpcionalTitulo01,
+                                    OpcionalTitulo02 = g.FirstOrDefault().WrTipoApartamento.OpcionalTitulo02,
+                                    OpcionalTitulo03 = g.FirstOrDefault().WrTipoApartamento.OpcionalTitulo03,
+                                    ValorDiariaTotal = g.Sum(x => x.ValorDiaria),
+                                    QuantidadeDiasRetornados = g.Select(x => x.Data).Distinct().Count(),
+                                    QuantidadeDiasPesquisados = sectionAvailability.TotalDias,
+                                    DatasDisponiveis = g.Select(x => x.Data)
                                 }).ToList();
 
             return availability;

@@ -9,8 +9,15 @@
                 {
                     <div class="room_item-6" data-background="@item.Img01">
                         <div class="text">
-                            <h2><a href="detalhes/acomodacao/@item.RoomId">@item.Nome</a></h2>
-                            <!--span class="price">Start form <span class="amout">$120</span> per day</!--span-->
+                            @if (item.QuantidadeDiasPesquisados == item.QuantidadeDiasRetornados)
+                            {
+                                <h2><a href="detalhes/acomodacao/@item.RoomId">@item.Nome</a></h2>
+                                <span class="price">Valor aproximado: <span class="amout">R$@item.ValorDiariaTotal</span></span>
+                            }
+                            else
+                            {
+                                <h2 class="txt-white">@item.Nome</h2>
+                            }
                             <p>@item.Descricao</p>
                             <ul>
                                 @if (string.IsNullOrEmpty(item.DestaqueTitulo))
@@ -30,7 +37,25 @@
                                     <li>@item.OpcionalTitulo03</li>
                                 }
                             </ul>
-                            <a href="detalhes/acomodacao/@item.RoomId" class="awe-btn awe-btn-13">Detalhes</a>
+                            @if (item.QuantidadeDiasPesquisados == item.QuantidadeDiasRetornados)
+                            {
+                                <a href="detalhes/acomodacao/@item.RoomId" class="awe-btn awe-btn-13">Detalhes</a>
+                            }
+                            else
+                            {
+                                if (item.DatasDisponiveis.Count() > 0)
+                                {
+                                    <p class="p-indisponivel">
+                                        Indisponível para o período selecionado.
+                                        <br>
+                                        <span class="txt-white">Alternativa(s):</span>
+                                        @foreach (var data in item.DatasDisponiveis)
+                                        {
+                                            <text>@data.ToString("dd/MM")</text>
+                                        }
+                                    </p>
+                                }
+                            }
                         </div>
                     </div>
                 }

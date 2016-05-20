@@ -15,5 +15,9 @@ namespace WebReserva.ViewModels
         public string OpcionalTitulo01 { get; set; }
         public string OpcionalTitulo02 { get; set; }
         public string OpcionalTitulo03 { get; set; }
+        public double QuantidadeDiasPesquisados { get; set; }
+        public int QuantidadeDiasRetornados { get; set; }
+        public decimal ValorDiariaTotal { get; set; }
+        public IEnumerable<DateTime> DatasDisponiveis { get; set; }
     }
 }
