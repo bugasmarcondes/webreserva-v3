@@ -4,6 +4,7 @@ namespace WebReserva.ViewModels
 {
     public class SectionAcomodacaoViewModel
     {
+        public int RoomId { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
         public string Img01 { get; set; }

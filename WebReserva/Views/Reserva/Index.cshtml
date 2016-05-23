@@ -1,6 +1,6 @@
-﻿@model WebReserva.ViewModels.PageAcomodacaoViewModel
+﻿@model WebReserva.ViewModels.PageReservaViewModel
 @{
-    ViewBag.Title = "Acomodação - " + Model.WrHotel.Nome;
+    ViewBag.Title = "Reserva - " + Model.WrHotel.Nome;
     ViewBag.TenantName = Model.WrHotel.Nome;
     ViewBag.TenantId = Model.WrHotel.Id;
     ViewBag.TenantUrl = Model.WrHotel.HostUrl;
@@ -15,6 +15,10 @@
     ViewBag.Erro = false;
 }
 
+@section scripts {
+    <script src="~/Content/global/angular/wrSectionReservationController.js"></script>
+}
+
 <section class="section-sub-banner awe-parallax hotel-1">
     <div class="awe-overlay"></div>
     <div class="sub-banner">
@@ -26,14 +30,4 @@
     </div>
 </section>
 
-@Html.Partial("SectionRoomDetail", Model.Acomodacao)
-
-@section scripts {
-    <script src="~/Content/global/js/datepicker-pt-BR.js"></script>
-    <script>
-        $('#checkin-date').datepicker("destroy");
-        $('#checkout-date').datepicker("destroy");
-        $('#qtd-adultos').selectpicker('val', @Model.Acomodacao.Adultos).attr('disabled', 'disabled');
-        $('#qtd-criancas').selectpicker('val', @Model.Acomodacao.Criancas).attr('disabled', 'disabled');
-    </script>
-}
+@Html.Partial("SectionReservation", Model.PostDetalhes)

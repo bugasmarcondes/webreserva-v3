@@ -33,6 +33,7 @@ namespace WebReserva.Controllers.Web
                 WrHotel = Tenant,
                 Acomodacao = new SectionAcomodacaoViewModel()
                 {
+                    RoomId = wrTipoApartamento.Id,
                     Nome = wrTipoApartamento.Nome,
                     Descricao = wrTipoApartamento.Descricao,
                     Img01 = wrTipoApartamento.Img01,

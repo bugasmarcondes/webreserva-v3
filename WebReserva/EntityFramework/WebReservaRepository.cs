@@ -195,5 +195,168 @@ namespace WebReserva.EntityFramework
 
             return availability;
         }
+
+        public int SaveReservation(PostReservationViewModel newReservation)
+        {
+            var wrHotel = _context.WrHotels.Where(a => a.Id == newReservation.WrHotelId).SingleOrDefault();
+
+            if (wrHotel == null)
+            {
+                throw new Exception("Hotel não encontrado");
+            }
+
+            //TODO converter datas para formato correto
+            try
+            {
+                var reserva = new WrReserva()
+                {
+                    Adulto = newReservation.Adultos,
+                    Chd = newReservation.Criancas,
+                    CheckIn = DateTime.Now,
+                    CheckOut = DateTime.Now,
+                    Chegada = DateTime.Now,
+                    Saida = DateTime.Now,
+                    Cpf = "",
+                    IdLetoh = 0,
+                    Status = 0,
+                    ApartamentoNomeHospede = newReservation.Nome,
+                    DataIntegra = DateTime.Now,
+                    Email = newReservation.Email,
+                    Nome = newReservation.Nome,
+                    Telefone = newReservation.Telefone,
+                    Observacao = newReservation.Observacoes,
+                    QtdUh = 1
+                };
+
+                _context.WrReservas.Add(reserva);
+
+                if (_context.SaveChanges() > 0)
+                {
+                    SendGridMessage myMessage = new SendGridMessage();
+                    myMessage.AddTo(wrHotel.EmailAdministrador);
+                    myMessage.From = new MailAddress("contato@webreserva.com", wrHotel.Nome);
+                    myMessage.Subject = "Pré-reserva";
+
+                    //TODO trocar URL da imagem
+                    //TODO validar se tem complemento
+
+                    myMessage.Html = "";
+                    myMessage.Html += "<center>";
+                    myMessage.Html += "	<table style=\"width:600px;padding:15px;background-color:#999;font-family:verdana,tahoma,sans-serif;color:#fff;\">";
+                    myMessage.Html += "		<tbody>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td align=\"center\" colspan=\"2\" style=\"padding-bottom:50px;\">";
+                    myMessage.Html += "					<a href=\"http://webreserva-v3.azurewebsites.net/" + wrHotel.HostUrl + "\"><img src=\"http://webreserva-v3.azurewebsites.net/logo.png\" alt=\"WebReserva\"></a>";
+                    myMessage.Html += "				</td>";
+                    myMessage.Html += "			</tr>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td>";
+                    myMessage.Html += "					<strong>Nome:</strong>";
+                    myMessage.Html += "				</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Nome + "</td>";
+                    myMessage.Html += "			</tr>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td>";
+                    myMessage.Html += "					<strong>Sobrenome:</strong>";
+                    myMessage.Html += "				</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Sobrenome + "</td>";
+                    myMessage.Html += "			</tr>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td>";
+                    myMessage.Html += "					<strong>Endereço:</strong>";
+                    myMessage.Html += "				</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Endereco + "</td>";
+                    myMessage.Html += "			</tr>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td>";
+                    myMessage.Html += "					<strong>Complemento:</strong>";
+                    myMessage.Html += "				</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Complemento + "</td>";
+                    myMessage.Html += "			</tr>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td>";
+                    myMessage.Html += "					<strong>Cidade:</strong>";
+                    myMessage.Html += "				</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Cidade + "</td>";
+                    myMessage.Html += "			</tr>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td>";
+                    myMessage.Html += "					<strong>Estado:</strong>";
+                    myMessage.Html += "				</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Estado + "</td>";
+                    myMessage.Html += "			</tr>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td>";
+                    myMessage.Html += "					<strong>Email:</strong>";
+                    myMessage.Html += "				</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Email + "</td>";
+                    myMessage.Html += "			</tr>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td>";
+                    myMessage.Html += "					<strong>Telefone:</strong>";
+                    myMessage.Html += "				</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Telefone + "</td>";
+                    myMessage.Html += "			</tr>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td>";
+                    myMessage.Html += "					<strong>Observações:</strong>";
+                    myMessage.Html += "				</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Observacoes + "</td>";
+                    myMessage.Html += "			</tr>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td>";
+                    myMessage.Html += "					<strong>Tipo de pagamento:</strong>";
+                    myMessage.Html += "				</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.TipoPagamento + "</td>";
+                    myMessage.Html += "			</tr>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td>";
+                    myMessage.Html += "					<strong>Ticket da reserva:</strong>";
+                    myMessage.Html += "				</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + reserva.Id + "</td>";
+                    myMessage.Html += "			</tr>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td>";
+                    myMessage.Html += "					<strong>Quantidade de adultos:</strong>";
+                    myMessage.Html += "				</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + reserva.Adulto + "</td>";
+                    myMessage.Html += "			</tr>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td>";
+                    myMessage.Html += "					<strong>Quantidade de crianças:</strong>";
+                    myMessage.Html += "				</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + reserva.Chd + "</td>";
+                    myMessage.Html += "			</tr>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td>";
+                    myMessage.Html += "					<strong>Check-in:</strong>";
+                    myMessage.Html += "				</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + reserva.CheckIn + "</td>";
+                    myMessage.Html += "			</tr>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td>";
+                    myMessage.Html += "					<strong>Check-out:</strong>";
+                    myMessage.Html += "				</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + reserva.CheckOut + "</td>";
+                    myMessage.Html += "			</tr>";
+                    myMessage.Html += "		</tbody>";
+                    myMessage.Html += "	</table>";
+                    myMessage.Html += "</center>";
+
+                    var transportWeb = new Web(ConfigurationManager.AppSettings["SendGridApiKey"]);
+
+                    transportWeb.DeliverAsync(myMessage);
+
+                    return reserva.Id;
+                }
+            }
+            catch (Exception ex)
+            {
+                //TODO log
+                throw ex;
+            }
+
+            return 0;
+        }
     }
 }

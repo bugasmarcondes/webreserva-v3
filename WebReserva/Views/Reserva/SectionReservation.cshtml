@@ -1,0 +1,131 @@
+﻿@model WebReserva.ViewModels.PostDetalhesViewMovel
+
+<section class="section-reservation-page bg-white" ng-controller="wrSectionReservationController">
+    <form novalidate name="srForm" ng-submit="saveReservation()">
+        <div class="container">
+            <div class="reservation-page">
+                <div class="row">
+                    <div class="col-md-4 col-lg-3">
+                        <div class="reservation-sidebar">
+                            <div class="reservation-date bg-gray">
+                                <h2 class="reservation-heading">Datas</h2>
+                                <ul>
+                                    <li>
+                                        <span>Check-in</span>
+                                        <span>@Model.CheckIn</span>
+                                        <input type="hidden" name="srCheckin" ng-model="srForm.checkin">
+                                        <input type="hidden" name="srEntrada" ng-model="srForm.entrada">
+                                    </li>
+                                    <li>
+                                        <span>Check-out</span>
+                                        <span>@Model.CheckOut</span>
+                                        <input type="hidden" name="srCheckout" ng-model="srForm.checkout">
+                                        <input type="hidden" name="srSaida" ng-model="srForm.saida">
+                                    </li>
+                                    <li>
+                                        <span>Total de noites</span>
+                                        <span>@Model.TotalDias</span>
+                                    </li>
+                                    <li>
+                                        <span>Total de pessoas</span>
+                                        <span>@Model.TotalPessoas</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="reservation-room-selected bg-gray">
+                                <h2 class="reservation-heading">Acomodação</h2>
+                                <div class="reservation-room-seleted_item">
+                                    <div class="reservation-room-seleted_name has-package">
+                                        <h2>@Model.RoomName</h2>
+                                    </div>
+                                    <span class="reservation-option">@Model.Adultos Adulto(s), @Model.Criancas Crianca(s)</span>
+                                    <input type="hidden" name="srAdultos" ng-model="srForm.adultos">
+                                    <input type="hidden" name="srCriancas" ng-model="srForm.criancas">
+                                </div>
+                                <div class="reservation-room-seleted_total bg-blue">
+                                    <label>TOTAL</label>
+                                    <span class="reservation-total">@Model.ValorDiariaTotal</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-lg-9">
+                        <div class="reservation_content">
+                            <div class="reservation-billing-detail">
+                                <h4>DETALHES DO PAGAMENTO</h4>
+                                <p>Após preenchido os dados, clique em Reservar para efetuar sua pré-reserva. Em seguida você receberá um e-mail e um atendente entrará em contato para confirmação.</p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label>Nome<sup>*</sup></label>
+                                        <input type="text" class="input-text" name="srNome" ng-model="srForm.nome" required>
+                                        <span class="text-danger" ng-show="srForm.srNome.$dirty && srForm.srNome.$error.required">Obrigatório</span>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label>Sobrenome<sup>*</sup></label>
+                                        <input type="text" class="input-text" name="srSobrenome" ng-model="srForm.sobrenome" required>
+                                        <span class="text-danger" ng-show="srForm.srSobrenome.$dirty && srForm.srSobrenome.$error.required">Obrigatório</span>
+                                    </div>
+                                </div>
+                                <label>Endereço<sup>*</sup></label>
+                                <input type="text" class="input-text" name="srEndereco" ng-model="srForm.endereco" required>
+                                <span class="text-danger" ng-show="srForm.srEndereco.$dirty && srForm.srEndereco.$error.required">Obrigatório</span>
+                                <br><br>
+                                <input type="text" class="input-text" placeholder="Complemento" ng-model="srForm.complemento">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label>Cidade<sup>*</sup></label>
+                                        <input type="text" class="input-text" name="srCidade" ng-model="srForm.cidade" required>
+                                        <span class="text-danger" ng-show="srForm.srCidade.$dirty && srForm.srCidade.$error.required">Obrigatório</span>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label>Estado<sup>*</sup></label>
+                                        <input type="text" class="input-text" name="srEstado" ng-model="srForm.estado" required>
+                                        <span class="text-danger" ng-show="srForm.srEstado.$dirty && srForm.srEstado.$error.required">Obrigatório</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label>Email<sup>*</sup></label>
+                                        <input type="email" class="input-text" name="srEmail" ng-model="srForm.email" required>
+                                        <span class="text-danger" ng-show="srForm.srEmail.$dirty && srForm.srEmail.$error.required">Obrigatório</span>
+                                        <span class="text-danger" ng-show="srForm.srEmail.$dirty && srForm.srEmail.$error.email">Email inválido</span>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label>Telefone<sup>*</sup></label>
+                                        <input type="text" class="input-text" name="srTelefone" ng-model="srForm.telefone" required>
+                                        <span class="text-danger" ng-show="srForm.srTelefone.$dirty && srForm.srTelefone.$error.required">Obrigatório</span>
+                                    </div>
+                                </div>
+                                <label>Observações para a reserva</label>
+                                <textarea type="text" class="input-textarea" placeholder="Exemplo: exigências para a reserva" ng-model="srForm.observacoes"></textarea>
+                                <ul class="option-bank">
+                                    <li>
+                                        <label class="label-radio">
+                                            <input type="radio" class="input-radio" name="chose-bank">
+                                            Transferência bancária
+                                        </label>
+                                        <p>Faça o depósito direto em nossa conta bancária. Por favor, guarde o comprovante de depósito. Sua ordem não será válida até que o depósito seja creditado em nossa conta.</p>
+                                    </li>
+                                    <li>
+                                        <label class="label-radio">
+                                            <input type="radio" class="input-radio" name="chose-bank">
+                                            Cheque
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label class="label-radio">
+                                            <input type="radio" class="input-radio" name="chose-bank">
+                                            Cartão de crédito
+                                        </label>
+                                        <img src="~/Content/global/img/icon-card.jpg" />
+                                    </li>
+                                </ul>
+                                <button type="submit" class="awe-btn awe-btn-13" ng-disabled="srForm.$invalid">Reservar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>

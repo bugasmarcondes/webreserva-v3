@@ -50,9 +50,9 @@
                         </div>
                         <div class="room-detail_form">
                             <label>Check-in</label>
-                            <input type="text" class="awe-calendar" id="checkin-date" readonly>
+                            <input type="text" class="awe-calendar" id="checkin-date" placeholder="@Model.CheckIn" readonly>
                             <label>Check-out</label>
-                            <input type="text" class="awe-calendar" id="checkout-date" readonly>
+                            <input type="text" class="awe-calendar" id="checkout-date" placeholder="@Model.CheckOut" readonly>
                             <label>Adultos</label>
                             <select class="awe-select" id="qtd-adultos">
                                 <option value="0">0</option>
@@ -79,7 +79,15 @@
                                 <option value="8">8</option>
                                 <option value="9">9</option>
                             </select>
-                            <button class="awe-btn awe-btn-13">Reservar agora</button>
+                            <form action="@Url.Action("Index", "Reserva", new { id = Model.RoomId })" method="POST">
+                                <input type="hidden" name="RoomId" value="@Model.RoomId">
+                                <input type="hidden" name="CheckIn" value="@Model.CheckIn">
+                                <input type="hidden" name="CheckOut" value="@Model.CheckOut">
+                                <input type="hidden" name="Adultos" value="@Model.Adultos">
+                                <input type="hidden" name="Criancas" value="@Model.Criancas">
+                                <input type="hidden" name="ValorDiariaTotal" value="@Model.ValorDiariaTotal">
+                                <input type="submit" class="awe-btn awe-btn-13" value="Reservar agora">
+                            </form>
                         </div>
                     </div>
                 </div>
