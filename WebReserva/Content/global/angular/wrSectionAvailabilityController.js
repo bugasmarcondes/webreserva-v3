@@ -37,7 +37,7 @@
                 var checkin = $scope.scaForm.checkIn;
                 var checkout = $scope.scaForm.checkOut;
                 var adultos = $scope.scaForm.adultos;
-                var criancas = ($scope.scaForm.criancas != '' && $scope.scaForm.criancas !== undefined ? criancas : '0');
+                var criancas = ($scope.scaForm.criancas != '' && $scope.scaForm.criancas !== undefined ? $scope.scaForm.criancas : '0');
 
                 window.location.href = '/' + tenantData.url + '/disponibilidade?checkin=' + checkin + '&checkout=' + checkout + '&adultos=' + adultos + '&criancas=' + criancas;
             }

@@ -1,0 +1,144 @@
+﻿@model WebReserva.ViewModels.SectionAcomodacaoViewModel
+
+<section class="section-room-detail bg-white">
+    <div class="container">
+        <div class="room-detail">
+            <div class="row">
+                <div class="col-lg-9">
+                    <div class="room-detail_img">
+                        @if (!string.IsNullOrWhiteSpace(Model.Img01))
+                        {
+                            <div class="room_img-item">
+                                <img src="@Model.Img01" alt="">
+                            </div>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(Model.Img02))
+                        {
+                            <div class="room_img-item">
+                                <img src="@Model.Img02" alt="">
+                            </div>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(Model.Img03))
+                        {
+                            <div class="room_img-item">
+                                <img src="@Model.Img03" alt="">
+                            </div>
+                        }
+                    </div>
+                    <div class="room-detail_thumbs">
+                        @if (!string.IsNullOrWhiteSpace(Model.Img01))
+                        {
+                            <a href="#"><img src="@Model.Img01" alt=""></a>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(Model.Img02))
+                        {
+                            <a href="#"><img src="@Model.Img02" alt=""></a>
+                        }
+                        @if (!string.IsNullOrWhiteSpace(Model.Img03))
+                        {
+                            <a href="#"><img src="@Model.Img03" alt=""></a>
+                        }
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="room-detail_book">
+                        <div class="room-detail_total">
+                            <h6>PREÇOS A PARTIR DE</h6>
+                            <p class="price">
+                                <span class="amout">R$@Model.ValorDiariaTotal</span>
+                            </p>
+                        </div>
+                        <div class="room-detail_form">
+                            <label>Check-in</label>
+                            <input type="text" class="awe-calendar" id="checkin-date" readonly>
+                            <label>Check-out</label>
+                            <input type="text" class="awe-calendar" id="checkout-date" readonly>
+                            <label>Adultos</label>
+                            <select class="awe-select" id="qtd-adultos">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                            <label>Crianças</label>
+                            <select class="awe-select" id="qtd-criancas">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                            <button class="awe-btn awe-btn-13">Reservar agora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="room-detail_tab">
+            <div class="row">
+                <div class="col-md-3">
+                    <ul class="room-detail_tab-header">
+                        <li class="active"><a href="#overview" data-toggle="tab">DETALHES</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-9">
+                    <div class="room-detail_tab-content tab-content">
+                        <div class="tab-pane fade active in" id="overview">
+                            <div class="room-detail_overview">
+                                <h5 class="text-uppercase">
+                                    @Model.Nome
+                                </h5>
+                                <p>@Model.Descricao</p>
+                                <div class="row">
+                                    <div class="col-xs-6 col-md-4">
+                                        <h6>@Model.DestaqueTitulo</h6>
+                                        <ul>
+                                            <li>@Model.DestaqueDescricao</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-6 col-md-4">
+                                        <h6></h6>
+                                        <ul>
+                                            <li>
+                                                @Model.OpcionalTitulo01
+                                                @if (!string.IsNullOrWhiteSpace(@Model.OpcionalDescricao02))
+                                                {
+                                                    <text>-</text> @Model.OpcionalDescricao01
+                                                }
+                                            </li>
+                                            <li>
+                                                @Model.OpcionalTitulo02
+                                                @if (!string.IsNullOrWhiteSpace(@Model.OpcionalDescricao02))
+                                                {
+                                                    <text>-</text> @Model.OpcionalDescricao02
+                                                }
+                                            </li>
+                                            <li>
+                                                @Model.OpcionalTitulo03
+                                                @if (!string.IsNullOrWhiteSpace(@Model.OpcionalDescricao03))
+                                                {
+                                                   <text>-</text> @Model.OpcionalDescricao03
+                                                }
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

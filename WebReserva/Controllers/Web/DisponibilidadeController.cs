@@ -44,14 +44,5 @@ namespace WebReserva.Controllers.Web
 
             return View(page);
         }
-
-        /*
-        public ActionResult SectionRoom()
-        {
-            var acomodacoes = _repository.GetSectionRoom(Tenant.Id);
-
-            return PartialView(acomodacoes);
-        }
-        */
     }
 }

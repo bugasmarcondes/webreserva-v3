@@ -163,12 +163,11 @@ namespace WebReserva.EntityFramework
             return true;
         }
 
-        //TODO remover
-        public List<WrTipoApartamento> GetSectionRoom(int wrHotelId)
+        public WrTipoApartamento GetWrTipoApartamento(int wrHotelId)
         {
-            var acomodacoes = _context.WrTipoApartamentos.ToList();
+            var acomodacao = _context.WrTipoApartamentos.FirstOrDefault(a => a.Id == wrHotelId);
 
-            return acomodacoes;
+            return acomodacao;
         }
 
         public List<SectionRoomViewModel> GetAvailability(SectionAvailabilityViewModel sectionAvailability)

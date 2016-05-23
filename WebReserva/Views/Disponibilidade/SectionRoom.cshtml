@@ -39,7 +39,20 @@
                             </ul>
                             @if (item.QuantidadeDiasPesquisados == item.QuantidadeDiasRetornados)
                             {
-                                <a href="detalhes/acomodacao/@item.RoomId" class="awe-btn awe-btn-13">Detalhes</a>
+                                var checkin = Request.QueryString["checkin"];
+                                var checkout = Request.QueryString["checkout"];
+                                var adultos = Request.QueryString["adultos"];
+                                var criancas = Request.QueryString["criancas"];
+
+                                <form action="@Url.Action("Acomodacao", "Detalhes", new { id = item.RoomId })" method="POST">
+                                    <input type="hidden" name="RoomId" value="@item.RoomId">
+                                    <input type="hidden" name="CheckIn" value="@checkin">
+                                    <input type="hidden" name="CheckOut" value="@checkout">
+                                    <input type="hidden" name="Adultos" value="@adultos">
+                                    <input type="hidden" name="Criancas" value="@criancas">
+                                    <input type="hidden" name="ValorDiariaTotal" value="@item.ValorDiariaTotal">
+                                    <input type="submit" class="awe-btn awe-btn-13" value="Detalhes">
+                                </form>
                             }
                             else
                             {
