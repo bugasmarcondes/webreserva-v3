@@ -27,5 +27,6 @@ namespace WebReserva.ViewModels
         public string Cpf { get; set; }
         public int IdLetoh { get; set; }
         public int Status { get; set; }
+        public int WrTipoApartamentoId { get; set; }
     }
 }

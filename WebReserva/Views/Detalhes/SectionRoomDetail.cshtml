@@ -79,7 +79,7 @@
                                 <option value="8">8</option>
                                 <option value="9">9</option>
                             </select>
-                            <form action="@Url.Action("Index", "Reserva", new { id = Model.RoomId })" method="POST">
+                            <form action="@Url.Action("Acomodacao", "Reserva", new { id = Model.RoomId })" method="POST">
                                 <input type="hidden" name="RoomId" value="@Model.RoomId">
                                 <input type="hidden" name="CheckIn" value="@Model.CheckIn">
                                 <input type="hidden" name="CheckOut" value="@Model.CheckOut">

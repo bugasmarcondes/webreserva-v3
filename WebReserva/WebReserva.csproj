@@ -244,6 +244,10 @@
     <Compile Include="Migrations\201605112332436_Valor_SectionPackages.Designer.cs">
       <DependentUpon>201605112332436_Valor_SectionPackages.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606030334599_WrReserva+WrTipoApartamentoId.cs" />
+    <Compile Include="Migrations\201606030334599_WrReserva+WrTipoApartamentoId.Designer.cs">
+      <DependentUpon>201606030334599_WrReserva+WrTipoApartamentoId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\WrBloqueioData.cs" />
     <Compile Include="Models\WrDisponibilidade.cs" />
@@ -425,10 +429,9 @@
     <None Include="Properties\PublishProfiles\webreserva-v3 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\webreserva-v3 - Web Deploy.pubxml" />
     <Content Include="Views\Detalhes\Acomodacao.cshtml" />
-    <Content Include="Views\Detalhes\Pacote.cshtml" />
     <Content Include="Views\Disponibilidade\SectionAvailability.cshtml" />
     <Content Include="Views\Detalhes\SectionRoomDetail.cshtml" />
-    <Content Include="Views\Reserva\Index.cshtml" />
+    <Content Include="Views\Reserva\Acomodacao.cshtml" />
     <Content Include="Views\Reserva\SectionReservation.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -485,6 +488,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605112332436_Valor_SectionPackages.resx">
       <DependentUpon>201605112332436_Valor_SectionPackages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606030334599_WrReserva+WrTipoApartamentoId.resx">
+      <DependentUpon>201606030334599_WrReserva+WrTipoApartamentoId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

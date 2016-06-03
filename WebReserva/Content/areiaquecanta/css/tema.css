@@ -3,7 +3,8 @@
 #footer .footer_bottom,
 #footer .footer_top,
 .ui-datepicker .ui-datepicker-calendar thead th,
-.bootstrap-select.btn-group.awe-select .dropdown-menu ul li.selected a { background-color: #8BA870; }
+.bootstrap-select.btn-group.awe-select .dropdown-menu ul li.selected a,
+.reservation-room-seleted_total { background-color: #8BA870; }
 .bootstrap-select.btn-group.awe-select .dropdown-menu ul li a:hover,
 .ui-datepicker .ui-datepicker-calendar td a.ui-state-active,
 .ui-datepicker .ui-datepicker-calendar td a:hover,

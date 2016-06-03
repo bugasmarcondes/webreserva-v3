@@ -13,14 +13,14 @@
                                     <li>
                                         <span>Check-in</span>
                                         <span>@Model.CheckIn</span>
-                                        <input type="hidden" name="srCheckin" ng-model="srForm.checkin">
-                                        <input type="hidden" name="srEntrada" ng-model="srForm.entrada">
+                                        <input type="hidden" id="srCheckin" value="@Model.CheckIn">
+                                        <input type="hidden" id="srEntrada" value="">
                                     </li>
                                     <li>
                                         <span>Check-out</span>
                                         <span>@Model.CheckOut</span>
-                                        <input type="hidden" name="srCheckout" ng-model="srForm.checkout">
-                                        <input type="hidden" name="srSaida" ng-model="srForm.saida">
+                                        <input type="hidden" id="srCheckout" value="@Model.CheckOut">
+                                        <input type="hidden" id="srSaida" value="">
                                     </li>
                                     <li>
                                         <span>Total de noites</span>
@@ -37,14 +37,15 @@
                                 <div class="reservation-room-seleted_item">
                                     <div class="reservation-room-seleted_name has-package">
                                         <h2>@Model.RoomName</h2>
+                                        <input type="hidden" id="srApartamentoId" value="@Model.RoomId">
                                     </div>
                                     <span class="reservation-option">@Model.Adultos Adulto(s), @Model.Criancas Crianca(s)</span>
-                                    <input type="hidden" name="srAdultos" ng-model="srForm.adultos">
-                                    <input type="hidden" name="srCriancas" ng-model="srForm.criancas">
+                                    <input type="hidden" id="srAdultos" value="@Model.Adultos">
+                                    <input type="hidden" id="srCriancas" value="@Model.Criancas">
                                 </div>
-                                <div class="reservation-room-seleted_total bg-blue">
+                                <div class="reservation-room-seleted_total">
                                     <label>TOTAL</label>
-                                    <span class="reservation-total">@Model.ValorDiariaTotal</span>
+                                    <span class="reservation-total">R$ @Model.ValorDiariaTotal</span>
                                 </div>
                             </div>
                         </div>
@@ -101,20 +102,20 @@
                                 <ul class="option-bank">
                                     <li>
                                         <label class="label-radio">
-                                            <input type="radio" class="input-radio" name="chose-bank">
+                                            <input type="radio" class="input-radio" name="chose-bank" value="0">
                                             Transferência bancária
                                         </label>
                                         <p>Faça o depósito direto em nossa conta bancária. Por favor, guarde o comprovante de depósito. Sua ordem não será válida até que o depósito seja creditado em nossa conta.</p>
                                     </li>
                                     <li>
                                         <label class="label-radio">
-                                            <input type="radio" class="input-radio" name="chose-bank">
+                                            <input type="radio" class="input-radio" name="chose-bank" value="1">
                                             Cheque
                                         </label>
                                     </li>
                                     <li>
                                         <label class="label-radio">
-                                            <input type="radio" class="input-radio" name="chose-bank">
+                                            <input type="radio" class="input-radio" name="chose-bank" value="2">
                                             Cartão de crédito
                                         </label>
                                         <img src="~/Content/global/img/icon-card.jpg" />

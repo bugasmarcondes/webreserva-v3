@@ -15,7 +15,7 @@ namespace WebReserva.Controllers.Web
         }
 
         [HttpPost]
-        public ActionResult Index(PostDetalhesViewMovel vm)
+        public ActionResult Acomodacao(PostDetalhesViewMovel vm)
         {
             if (vm != null)
             {

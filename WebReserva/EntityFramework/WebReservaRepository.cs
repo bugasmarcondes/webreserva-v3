@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.Entity.SqlServer;
 using System.Linq;
 using System.Net.Mail;
 using WebReserva.Models;
@@ -38,8 +39,8 @@ namespace WebReserva.EntityFramework
 
         public List<WrBloqueioData> GetSectionSlider(int wrHotelId)
         {
-            var bloqueios = _context.WrBloqueioDatas.Where(a => 
-                a.Inicio > DateTime.Now && 
+            var bloqueios = _context.WrBloqueioDatas.Where(a =>
+                a.Inicio > DateTime.Now &&
                 a.WrHotelId == wrHotelId &&
                 a.Pacote == true);
             var b = bloqueios.OrderBy(a => a.Inicio).Skip(Math.Max(0, bloqueios.Count() - 3)).ToList();
@@ -49,16 +50,23 @@ namespace WebReserva.EntityFramework
 
         public List<SectionPackageViewModel> GetSectionPackage(int wrHotelId)
         {
+            var hostUrl = _context.WrHotels.FirstOrDefault(s => s.Id == wrHotelId);
+
             var pacotes = (from p in _context.WrBloqueioDatas
                            where p.Inicio > DateTime.Now &&
                                  p.WrHotelId == wrHotelId &&
                                  p.Pacote == true
                            select new SectionPackageViewModel
-                          {
-                              Titulo = p.Titulo,
-                              Imagem = p.Img01,
-                              Valor = p.Valor
-                          }).ToList();
+                           {
+                               PackageId = p.Id,
+                               Titulo = p.Titulo,
+                               Imagem = p.Img01,
+                               Valor = p.Valor,
+                               HostUrl = hostUrl.HostUrl,
+                               Inicio = SqlFunctions.DateName("day", p.Inicio) + "/" + SqlFunctions.DatePart("month", p.Inicio) + "/" + SqlFunctions.DateName("year", p.Inicio),
+                               Fim = SqlFunctions.DateName("day", p.Fim) + "/" + SqlFunctions.DatePart("month", p.Fim) + "/" + SqlFunctions.DateName("year", p.Fim),
+                               Adultos = 1
+                           }).ToList();
 
             return pacotes;
         }
@@ -212,8 +220,8 @@ namespace WebReserva.EntityFramework
                 {
                     Adulto = newReservation.Adultos,
                     Chd = newReservation.Criancas,
-                    CheckIn = DateTime.Now,
-                    CheckOut = DateTime.Now,
+                    CheckIn = Convert.ToDateTime(newReservation.CheckIn, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat),
+                    CheckOut = Convert.ToDateTime(newReservation.CheckOut, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat),
                     Chegada = DateTime.Now,
                     Saida = DateTime.Now,
                     Cpf = "",
@@ -225,7 +233,8 @@ namespace WebReserva.EntityFramework
                     Nome = newReservation.Nome,
                     Telefone = newReservation.Telefone,
                     Observacao = newReservation.Observacoes,
-                    QtdUh = 1
+                    QtdUh = 1,
+                    WrTipoApartamentoId = newReservation.WrTipoApartamentoId
                 };
 
                 _context.WrReservas.Add(reserva);
@@ -331,13 +340,13 @@ namespace WebReserva.EntityFramework
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Check-in:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + reserva.CheckIn + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + Convert.ToDateTime(newReservation.CheckIn, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat).ToString("dd/MM/yyyy") + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Check-out:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + reserva.CheckOut + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + Convert.ToDateTime(newReservation.CheckOut, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat).ToString("dd/MM/yyyy") + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "		</tbody>";
                     myMessage.Html += "	</table>";

@@ -37,5 +37,7 @@ namespace WebReserva.Models
         public DateTime Saida { get; set; }
 
         public int Status { get; set; }
+
+        public int WrTipoApartamentoId{ get; set; }
     }
 }

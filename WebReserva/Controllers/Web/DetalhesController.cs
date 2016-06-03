@@ -57,10 +57,5 @@ namespace WebReserva.Controllers.Web
 
             return View(page);
         }
-
-        public ActionResult Pacote(int id)
-        {
-            return View(Tenant);
-        }
     }
 }

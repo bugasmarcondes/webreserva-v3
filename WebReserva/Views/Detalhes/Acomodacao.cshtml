@@ -31,8 +31,8 @@
 @section scripts {
     <script src="~/Content/global/js/datepicker-pt-BR.js"></script>
     <script>
-        $('#checkin-date').datepicker("destroy");
-        $('#checkout-date').datepicker("destroy");
+        $('#checkin-date').datepicker('destroy');
+        $('#checkout-date').datepicker('destroy');
         $('#qtd-adultos').selectpicker('val', @Model.Acomodacao.Adultos).attr('disabled', 'disabled');
         $('#qtd-criancas').selectpicker('val', @Model.Acomodacao.Criancas).attr('disabled', 'disabled');
     </script>
