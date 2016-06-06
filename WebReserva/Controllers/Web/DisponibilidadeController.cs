@@ -39,8 +39,17 @@ namespace WebReserva.Controllers.Web
             {
                 WrHotel = Tenant,
                 SectionAvailability = sectionAvailability,
-                SectionRoomList = sectionRoomList
+                SectionRoomList = sectionRoomList,
+                HasBloqueio = false
             };
+
+            var hasBloqueio = _repository.AlertIfPackageFound(sectionAvailability);
+
+            if (hasBloqueio.Count > 0)
+            {
+                page.HasBloqueio = true;
+                page.SectionPackage = hasBloqueio;
+            }
 
             return View(page);
         }

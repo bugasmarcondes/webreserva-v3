@@ -433,6 +433,7 @@
     <Content Include="Views\Detalhes\SectionRoomDetail.cshtml" />
     <Content Include="Views\Reserva\Acomodacao.cshtml" />
     <Content Include="Views\Reserva\SectionReservation.cshtml" />
+    <Content Include="Views\Disponibilidade\SectionPackage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

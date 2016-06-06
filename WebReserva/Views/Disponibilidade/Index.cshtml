@@ -34,4 +34,11 @@
     @Html.Partial("SectionAvailability", Model.SectionAvailability)
 </div>
 
-@Html.Partial("SectionRoom", Model.SectionRoomList)
+@if (Model.HasBloqueio)
+{
+    @Html.Partial("SectionPackage", Model.SectionPackage)
+}
+else
+{
+    @Html.Partial("SectionRoom", Model.SectionRoomList)
+}

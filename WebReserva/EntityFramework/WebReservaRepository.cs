@@ -125,15 +125,13 @@ namespace WebReserva.EntityFramework
             myMessage.From = new MailAddress("contato@webreserva.com", wrHotel.Nome);
             myMessage.Subject = newEmail.Assunto;
 
-            //TODO trocar URL da imagem
-
             myMessage.Html = "";
             myMessage.Html += "<center>";
             myMessage.Html += "	<table style=\"width:600px;padding:15px;background-color:#999;font-family:verdana,tahoma,sans-serif;color:#fff;\">";
             myMessage.Html += "		<tbody>";
             myMessage.Html += "			<tr>";
             myMessage.Html += "				<td align=\"center\" colspan=\"2\" style=\"padding-bottom:50px;\">";
-            myMessage.Html += "					<a href=\"http://webreserva-v3.azurewebsites.net/" + wrHotel.HostUrl + "\"><img src=\"http://webreserva-v3.azurewebsites.net/logo.png\" alt=\"WebReserva\"></a>";
+            myMessage.Html += "					<a href=\"http://webreserva-v3.azurewebsites.net/" + wrHotel.HostUrl + "\"><img src=\"http://webreserva-v3.azurewebsites.net/Content/" + wrHotel.HostUrl + "/img/logo.png\" alt=\"WebReserva\"></a>";
             myMessage.Html += "				</td>";
             myMessage.Html += "			</tr>";
             myMessage.Html += "			<tr>";
@@ -176,6 +174,42 @@ namespace WebReserva.EntityFramework
             var acomodacao = _context.WrTipoApartamentos.FirstOrDefault(a => a.Id == wrHotelId);
 
             return acomodacao;
+        }
+
+        public List<SectionPackageViewModel> AlertIfPackageFound(SectionAvailabilityViewModel sectionAvailability)
+        {
+            var hostUrl = _context.WrHotels.FirstOrDefault(s => s.Id == sectionAvailability.WrHotelId);
+
+            var bloqueios = (from a in _context.WrBloqueioDatas
+                             where (sectionAvailability.CheckIn < a.Inicio &&
+                                   sectionAvailability.CheckIn < a.Fim &&
+                                   sectionAvailability.CheckOut > a.Inicio &&
+                                   sectionAvailability.CheckOut < a.Fim) ||
+                                   (sectionAvailability.CheckIn >= a.Inicio &&
+                                   sectionAvailability.CheckIn < a.Fim &&
+                                   sectionAvailability.CheckOut > a.Inicio &&
+                                   sectionAvailability.CheckOut < a.Fim) ||
+                                   (sectionAvailability.CheckIn > a.Inicio &&
+                                   sectionAvailability.CheckIn < a.Fim &&
+                                   sectionAvailability.CheckOut > a.Inicio &&
+                                   sectionAvailability.CheckOut > a.Fim) ||
+                                   (sectionAvailability.CheckIn > a.Inicio &&
+                                   sectionAvailability.CheckIn < a.Fim &&
+                                   sectionAvailability.CheckOut > a.Inicio &&
+                                   sectionAvailability.CheckOut <= a.Fim)
+                             select new SectionPackageViewModel
+                             {
+                                 PackageId = a.Id,
+                                 Titulo = a.Titulo,
+                                 Imagem = a.Img01,
+                                 Valor = a.Valor,
+                                 HostUrl = hostUrl.HostUrl,
+                                 Inicio = SqlFunctions.DateName("day", a.Inicio) + "/" + SqlFunctions.DatePart("month", a.Inicio) + "/" + SqlFunctions.DateName("year", a.Inicio),
+                                 Fim = SqlFunctions.DateName("day", a.Fim) + "/" + SqlFunctions.DatePart("month", a.Fim) + "/" + SqlFunctions.DateName("year", a.Fim),
+                                 Adultos = 1
+                             }).ToList();
+
+            return bloqueios;
         }
 
         public List<SectionRoomViewModel> GetAvailability(SectionAvailabilityViewModel sectionAvailability)
@@ -246,16 +280,13 @@ namespace WebReserva.EntityFramework
                     myMessage.From = new MailAddress("contato@webreserva.com", wrHotel.Nome);
                     myMessage.Subject = "Pré-reserva";
 
-                    //TODO trocar URL da imagem
-                    //TODO validar se tem complemento
-
                     myMessage.Html = "";
                     myMessage.Html += "<center>";
                     myMessage.Html += "	<table style=\"width:600px;padding:15px;background-color:#999;font-family:verdana,tahoma,sans-serif;color:#fff;\">";
                     myMessage.Html += "		<tbody>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td align=\"center\" colspan=\"2\" style=\"padding-bottom:50px;\">";
-                    myMessage.Html += "					<a href=\"http://webreserva-v3.azurewebsites.net/" + wrHotel.HostUrl + "\"><img src=\"http://webreserva-v3.azurewebsites.net/logo.png\" alt=\"WebReserva\"></a>";
+                    myMessage.Html += "					<a href=\"http://webreserva-v3.azurewebsites.net/" + wrHotel.HostUrl + "\"><img src=\"http://webreserva-v3.azurewebsites.net/Content/" + wrHotel.HostUrl + "/img/logo.png\" alt=\"WebReserva\"></a>";
                     myMessage.Html += "				</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
@@ -340,13 +371,13 @@ namespace WebReserva.EntityFramework
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Check-in:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + Convert.ToDateTime(newReservation.CheckIn, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat).ToString("dd/MM/yyyy") + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.CheckIn.ToShortDateString().Split('/')[1] + "/" + newReservation.CheckIn.ToShortDateString().Split('/')[0] + "/" + newReservation.CheckIn.ToShortDateString().Split('/')[2] + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Check-out:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + Convert.ToDateTime(newReservation.CheckOut, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat).ToString("dd/MM/yyyy") + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.CheckOut.ToShortDateString().Split('/')[1] + "/" + newReservation.CheckOut.ToShortDateString().Split('/')[0] + "/" + newReservation.CheckOut.ToShortDateString().Split('/')[2] + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "		</tbody>";
                     myMessage.Html += "	</table>";
