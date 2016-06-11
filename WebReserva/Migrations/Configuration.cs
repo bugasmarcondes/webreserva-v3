@@ -483,45 +483,6 @@ namespace WebReserva.Migrations
                     WrHotelId = 4
                 }
             );
-
-            context.WrDisponibilidades.AddOrUpdate(
-                a => a.Id,
-                new WrDisponibilidade
-                {
-                    Id = 1,
-                    Data = new DateTime(2016, 05, 01),
-                    Quantidade = 1,
-                    WrTipoApartamentoId = 1,
-                    ValorDiaria = 20.00M,
-                    DiariaAdulto01 = 100.00M,
-                    DiariaAdulto02 = 90.00M,
-                    DiariaAdulto03 = 80.00M,
-                    DiariaAdulto04 = 70.00M,
-                    DiariaAdulto05 = 60.00M,
-                    DiariaAdulto06 = 50.00M,
-                    DiariaAdulto07 = 40.00M,
-                    DiariaAdulto08 = 30.00M,
-                    DiariaAdulto09 = 20.00M,
-                    DiariaAdulto10 = 10.00M,
-                    DiariaCrianca00 = 180.00M,
-                    DiariaCrianca01 = 170.00M,
-                    DiariaCrianca02 = 160.00M,
-                    DiariaCrianca03 = 150.00M,
-                    DiariaCrianca04 = 140.00M,
-                    DiariaCrianca05 = 130.00M,
-                    DiariaCrianca06 = 120.00M,
-                    DiariaCrianca07 = 110.00M,
-                    DiariaCrianca08 = 100.00M,
-                    DiariaCrianca09 = 90.00M,
-                    DiariaCrianca10 = 80.00M,
-                    DiariaCrianca11 = 70.00M,
-                    DiariaCrianca12 = 60.00M,
-                    DiariaCrianca13 = 50.00M,
-                    DiariaCrianca14 = 40.00M,
-                    DiariaCrianca15 = 30.00M,
-                    DiariaCrianca16 = 20.00M,
-                    DiariaCrianca17 = 10.00M
-                });
         }
     }
 }
