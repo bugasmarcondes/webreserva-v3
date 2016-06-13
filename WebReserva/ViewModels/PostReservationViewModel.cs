@@ -20,13 +20,14 @@ namespace WebReserva.ViewModels
         public int TipoPagamento { get; set; }
         public int Adultos { get; set; }
         public int Criancas { get; set; }
-        public DateTime CheckIn { get; set; }
-        public DateTime CheckOut { get; set; }
+        public string CheckIn { get; set; }
+        public string CheckOut { get; set; }
         public DateTime Chegada { get; set; }
         public DateTime Saida { get; set; }
         public string Cpf { get; set; }
         public int IdLetoh { get; set; }
         public int Status { get; set; }
         public int WrTipoApartamentoId { get; set; }
+        public decimal ValorTotal { get; set; }
     }
 }

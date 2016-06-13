@@ -9,12 +9,12 @@
         $scope.saveReservation = function () {
             var url = '/' + tenantData.url + '/api/v1/reservation';
             $scope.srForm.wrHotelId = tenantData.id;
-            //TODO corrigir data p/ formato dd/mm
             $scope.srForm.checkin = $('#srCheckin').val();
             $scope.srForm.checkout = $('#srCheckout').val();
             $scope.srForm.adultos = $('#srAdultos').val();
             $scope.srForm.criancas = $('#srCriancas').val();
             $scope.srForm.wrTipoApartamentoId = $('#srApartamentoId').val();
+            $scope.srForm.valorTotal = $('#srValorTotal').val().replace(',', '.');
             $http.post(url, $scope.srForm)
                 .then(function (result) {
                     var newReservation = result.data;

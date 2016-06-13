@@ -268,7 +268,8 @@ namespace WebReserva.EntityFramework
                     Telefone = newReservation.Telefone,
                     Observacao = newReservation.Observacoes,
                     QtdUh = 1,
-                    WrTipoApartamentoId = newReservation.WrTipoApartamentoId
+                    WrTipoApartamentoId = newReservation.WrTipoApartamentoId,
+                    ValorTotal = newReservation.ValorTotal
                 };
 
                 _context.WrReservas.Add(reserva);
@@ -371,13 +372,13 @@ namespace WebReserva.EntityFramework
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Check-in:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.CheckIn.ToShortDateString().Split('/')[1] + "/" + newReservation.CheckIn.ToShortDateString().Split('/')[0] + "/" + newReservation.CheckIn.ToShortDateString().Split('/')[2] + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.CheckIn + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Check-out:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.CheckOut.ToShortDateString().Split('/')[1] + "/" + newReservation.CheckOut.ToShortDateString().Split('/')[0] + "/" + newReservation.CheckOut.ToShortDateString().Split('/')[2] + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.CheckOut + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "		</tbody>";
                     myMessage.Html += "	</table>";
