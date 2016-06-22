@@ -7,6 +7,8 @@
         $scope.srForm = {};
 
         $scope.saveReservation = function () {
+            $('#btn-reservar').hide();
+
             var url = '/' + tenantData.url + '/api/v1/reservation';
             $scope.srForm.wrHotelId = tenantData.id;
             $scope.srForm.checkin = $('#srCheckin').val();
@@ -29,6 +31,8 @@
                     }, 3000);
                 },
                 function (result) {
+                    $('#btn-reservar').show();
+
                     if (result.status == 500) {
                         toastr.error(result.data.message);
                     }

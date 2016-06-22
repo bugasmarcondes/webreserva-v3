@@ -229,11 +229,75 @@ namespace WebReserva.EntityFramework
                                     OpcionalTitulo01 = g.FirstOrDefault().WrTipoApartamento.OpcionalTitulo01,
                                     OpcionalTitulo02 = g.FirstOrDefault().WrTipoApartamento.OpcionalTitulo02,
                                     OpcionalTitulo03 = g.FirstOrDefault().WrTipoApartamento.OpcionalTitulo03,
-                                    ValorDiariaTotal = g.Sum(x => x.ValorDiaria),
+                                    //ValorAdulto = g.Sum(x => x.DiariaAdulto01),
+                                    //ValorCrianca = g.Sum(x => x.DiariaCriancaFaixa01),
+                                    DiariaAdulto01 = g.Sum(x => x.DiariaAdulto01),
+                                    DiariaAdulto02 = g.Sum(x => x.DiariaAdulto02),
+                                    DiariaAdulto03 = g.Sum(x => x.DiariaAdulto03),
+                                    DiariaAdulto04 = g.Sum(x => x.DiariaAdulto04),
+                                    DiariaAdulto05 = g.Sum(x => x.DiariaAdulto05),
+                                    DiariaAdulto06 = g.Sum(x => x.DiariaAdulto06),
+                                    DiariaAdulto07 = g.Sum(x => x.DiariaAdulto07),
+                                    DiariaAdulto08 = g.Sum(x => x.DiariaAdulto08),
+                                    DiariaAdulto09 = g.Sum(x => x.DiariaAdulto09),
+                                    DiariaAdulto10 = g.Sum(x => x.DiariaAdulto10),
+                                    DiariaCriancaFaixa01 = g.Sum(x => x.DiariaCriancaFaixa01),
+                                    DiariaCriancaFaixa02 = g.Sum(x => x.DiariaCriancaFaixa02),
+                                    DiariaCriancaFaixa03 = g.Sum(x => x.DiariaCriancaFaixa03),
                                     QuantidadeDiasRetornados = g.Select(x => x.Data).Distinct().Count(),
                                     QuantidadeDiasPesquisados = sectionAvailability.TotalDias,
                                     DatasDisponiveis = g.Select(x => x.Data)
                                 }).ToList();
+
+            foreach (var a in availability)
+            {
+                switch (sectionAvailability.Adultos)
+                {
+                    case 1:
+                        a.ValorAdulto = a.DiariaAdulto01;
+                        break;
+                    case 2:
+                        a.ValorAdulto = a.DiariaAdulto02;
+                        break;
+                    case 3:
+                        a.ValorAdulto = a.DiariaAdulto03;
+                        break;
+                    case 4:
+                        a.ValorAdulto = a.DiariaAdulto04;
+                        break;
+                    case 5:
+                        a.ValorAdulto = a.DiariaAdulto05;
+                        break;
+                    case 6:
+                        a.ValorAdulto = a.DiariaAdulto06;
+                        break;
+                    case 7:
+                        a.ValorAdulto = a.DiariaAdulto07;
+                        break;
+                    case 8:
+                        a.ValorAdulto = a.DiariaAdulto08;
+                        break;
+                    case 9:
+                        a.ValorAdulto = a.DiariaAdulto09;
+                        break;
+                    case 10:
+                        a.ValorAdulto = a.DiariaAdulto10;
+                        break;
+                }
+
+                switch (sectionAvailability.Criancas)
+                {
+                    case 1:
+                        a.ValorCrianca = a.DiariaCriancaFaixa01;
+                        break;
+                    case 2:
+                        a.ValorCrianca = a.DiariaCriancaFaixa02;
+                        break;
+                    case 3:
+                        a.ValorCrianca = a.DiariaCriancaFaixa03;
+                        break;
+                }
+            }
 
             return availability;
         }
@@ -344,11 +408,17 @@ namespace WebReserva.EntityFramework
                     myMessage.Html += "				</td>";
                     myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Observacoes + "</td>";
                     myMessage.Html += "			</tr>";
+                    //myMessage.Html += "			<tr>";
+                    //myMessage.Html += "				<td>";
+                    //myMessage.Html += "					<strong>Tipo de pagamento:</strong>";
+                    //myMessage.Html += "				</td>";
+                    //myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.TipoPagamento + "</td>";
+                    //myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
-                    myMessage.Html += "					<strong>Tipo de pagamento:</strong>";
+                    myMessage.Html += "					<strong>Valor:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.TipoPagamento + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.ValorTotal + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
