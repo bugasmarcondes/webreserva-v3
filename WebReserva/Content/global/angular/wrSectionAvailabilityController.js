@@ -28,7 +28,7 @@
 
                     toastr.error(scaTxtErros, 'CHECAR DISPONIBILIDADE');
                 }
-            } 
+            }
             else if (tenantData.id == '') {
                 toastr.error('Erro ao checar disponibilidade. Por favor, comunique o administrador do sistema.', 'CHECAR DISPONIBILIDADE');
                 console.log('[Erro | CHECAR DISPONIBILIDADE] tenantData não encontrado');
@@ -38,8 +38,11 @@
                 var checkout = $scope.scaForm.checkOut;
                 var adultos = $scope.scaForm.adultos;
                 var criancas = ($scope.scaForm.criancas != '' && $scope.scaForm.criancas !== undefined ? $scope.scaForm.criancas : '0');
+                var faixa01 = ($scope.scaForm.faixa01 != '' && $scope.scaForm.faixa01 !== undefined ? $scope.scaForm.faixa01 : '0');
+                var faixa02 = ($scope.scaForm.faixa02 != '' && $scope.scaForm.faixa02 !== undefined ? $scope.scaForm.faixa02 : '0');
+                var faixa03 = ($scope.scaForm.faixa03 != '' && $scope.scaForm.faixa03 !== undefined ? $scope.scaForm.faixa03 : '0');
 
-                window.location.href = '/' + tenantData.url + '/disponibilidade?checkin=' + checkin + '&checkout=' + checkout + '&adultos=' + adultos + '&criancas=' + criancas;
+                window.location.href = '/' + tenantData.url + '/disponibilidade?checkin=' + checkin + '&checkout=' + checkout + '&adultos=' + adultos + '&criancas=' + criancas + '&faixa01=' + faixa01 + '&faixa02=' + faixa02 + '&faixa03=' + faixa03;
             }
         }
     }

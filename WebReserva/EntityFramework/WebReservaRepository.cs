@@ -229,8 +229,6 @@ namespace WebReserva.EntityFramework
                                     OpcionalTitulo01 = g.FirstOrDefault().WrTipoApartamento.OpcionalTitulo01,
                                     OpcionalTitulo02 = g.FirstOrDefault().WrTipoApartamento.OpcionalTitulo02,
                                     OpcionalTitulo03 = g.FirstOrDefault().WrTipoApartamento.OpcionalTitulo03,
-                                    //ValorAdulto = g.Sum(x => x.DiariaAdulto01),
-                                    //ValorCrianca = g.Sum(x => x.DiariaCriancaFaixa01),
                                     DiariaAdulto01 = g.Sum(x => x.DiariaAdulto01),
                                     DiariaAdulto02 = g.Sum(x => x.DiariaAdulto02),
                                     DiariaAdulto03 = g.Sum(x => x.DiariaAdulto03),
@@ -285,17 +283,20 @@ namespace WebReserva.EntityFramework
                         break;
                 }
 
-                switch (sectionAvailability.Criancas)
+                if (sectionAvailability.Criancas > 0)
                 {
-                    case 1:
-                        a.ValorCrianca = a.DiariaCriancaFaixa01;
-                        break;
-                    case 2:
-                        a.ValorCrianca = a.DiariaCriancaFaixa02;
-                        break;
-                    case 3:
-                        a.ValorCrianca = a.DiariaCriancaFaixa03;
-                        break;
+                    if (sectionAvailability.Faixa01 > 0)
+                    {
+                        a.ValorCrianca = a.ValorCrianca + (a.DiariaCriancaFaixa01 * sectionAvailability.Faixa01);
+                    }
+                    if (sectionAvailability.Faixa02 > 0)
+                    {
+                        a.ValorCrianca = a.ValorCrianca + (a.DiariaCriancaFaixa02 * sectionAvailability.Faixa02);
+                    }
+                    if (sectionAvailability.Faixa03 > 0)
+                    {
+                        a.ValorCrianca = a.ValorCrianca + (a.DiariaCriancaFaixa03 * sectionAvailability.Faixa03);
+                    }
                 }
             }
 

@@ -17,7 +17,7 @@ namespace WebReserva.Controllers.Web
             _repository = repository;
         }
 
-        public ActionResult Index(string checkin, string checkout, string adultos, string criancas)
+        public ActionResult Index(string checkin, string checkout, string adultos, string criancas, string faixa01, string faixa02, string faixa03)
         {
             List<SectionRoomViewModel> sectionRoomList = null;
 
@@ -27,6 +27,9 @@ namespace WebReserva.Controllers.Web
                 CheckOut = Convert.ToDateTime(checkout, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat),
                 Adultos = Convert.ToInt32(adultos),
                 Criancas = Convert.ToInt32(criancas),
+                Faixa01 = Convert.ToInt32(faixa01),
+                Faixa02 = Convert.ToInt32(faixa02),
+                Faixa03 = Convert.ToInt32(faixa03),
                 WrHotelId = Tenant.Id
             };
 

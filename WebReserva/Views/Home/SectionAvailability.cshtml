@@ -6,11 +6,11 @@
                     <h2>CHECAR DISPONIBILIDADE</h2>
                 </div>
                 <div class="col-lg-9">
-                    <form  novalidate name="scaForm" ng-submit="checkAvailability()">
+                    <form novalidate name="scaForm" ng-submit="checkAvailability()">
                         <div class="availability-form">
                             <input type="text" name="scaCheckIn" class="awe-calendar from" placeholder="Check-in" ng-model="scaForm.checkIn" required>
                             <input type="text" name="scaCheckOut" class="awe-calendar to" placeholder="Check-out" ng-model="scaForm.checkOut" required>
-                            <select class="awe-select" name="scaAdultos" ng-model="scaForm.adultos" required>
+                            <select class="awe-select mgl-0" name="scaAdultos" ng-model="scaForm.adultos" required>
                                 <option value="">Adultos</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -34,6 +34,44 @@
                                 <option value="8">8</option>
                                 <option value="9">9</option>
                             </select>
+                            <div id="div-faixa-etaria" ng-show="scaForm.criancas > 0">
+                                <select class="awe-select" name="scaFaixa01" ng-model="scaForm.faixa01">
+                                    <option value="">Faixa 01</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                                <select class="awe-select" name="scaFaixa02" ng-model="scaForm.faixa02">
+                                    <option value="">Faixa 02</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                                <select class="awe-select" name="scaFaixa03" ng-model="scaForm.faixa03">
+                                    <option value="">Faixa 03</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                </select>
+                            </div>
                             <div class="vailability-submit">
                                 <button class="awe-btn awe-btn-13">Pesquisar</button>
                             </div>
