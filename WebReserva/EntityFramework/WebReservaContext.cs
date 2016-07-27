@@ -16,5 +16,6 @@ namespace WebReserva.EntityFramework
         public DbSet<WrReserva> WrReservas { get; set; }
         public DbSet<WrTipoApartamento> WrTipoApartamentos { get; set; }
         public DbSet<WrMailing> WrMailings { get; set; }
+        public DbSet<WrPesquisa> WrPesquisas { get; set; }
     }
 }

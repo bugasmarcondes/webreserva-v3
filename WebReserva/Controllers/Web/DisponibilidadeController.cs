@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using WebReserva.EntityFramework;
+using WebReserva.Models;
 using WebReserva.ViewModels;
 
 namespace WebReserva.Controllers.Web
@@ -19,6 +20,16 @@ namespace WebReserva.Controllers.Web
 
         public ActionResult Index(string checkin, string checkout, string adultos, string criancas, string faixa01, string faixa02, string faixa03)
         {
+            WrPesquisa pesquisa = new WrPesquisa
+            {
+                CheckIn = Convert.ToDateTime(checkin, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat),
+                CheckOut = Convert.ToDateTime(checkout, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat),
+                DataPesquisa = Convert.ToDateTime(DateTime.Now, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat),
+                WrHotelId = Tenant.Id
+            };
+
+            _repository.SaveWrPesquisa(pesquisa);
+
             List<SectionRoomViewModel> sectionRoomList = null;
 
             var sectionAvailability = new SectionAvailabilityViewModel()

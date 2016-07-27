@@ -252,11 +252,16 @@
     <Compile Include="Migrations\201606111931430_ValorReserva+Faixas.Designer.cs">
       <DependentUpon>201606111931430_ValorReserva+Faixas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607270056218_Add WrPesquisa.cs" />
+    <Compile Include="Migrations\201607270056218_Add WrPesquisa.Designer.cs">
+      <DependentUpon>201607270056218_Add WrPesquisa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\WrBloqueioData.cs" />
     <Compile Include="Models\WrDisponibilidade.cs" />
     <Compile Include="Models\WrHotel.cs" />
     <Compile Include="Models\WrMailing.cs" />
+    <Compile Include="Models\WrPesquisa.cs" />
     <Compile Include="Models\WrReserva.cs" />
     <Compile Include="Models\WrTipoApartamento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -499,6 +504,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606111931430_ValorReserva+Faixas.resx">
       <DependentUpon>201606111931430_ValorReserva+Faixas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607270056218_Add WrPesquisa.resx">
+      <DependentUpon>201607270056218_Add WrPesquisa.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

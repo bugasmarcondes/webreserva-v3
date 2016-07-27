@@ -17,5 +17,6 @@ namespace WebReserva.EntityFramework
         List<SectionRoomViewModel> GetAvailability(SectionAvailabilityViewModel sectionAvailability);
         int SaveReservation(PostReservationViewModel newReservation);
         List<SectionPackageViewModel> AlertIfPackageFound(SectionAvailabilityViewModel sectionAvailability);
+        void SaveWrPesquisa(WrPesquisa wrPesquisa);
     }
 }

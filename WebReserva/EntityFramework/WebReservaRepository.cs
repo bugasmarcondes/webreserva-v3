@@ -470,5 +470,20 @@ namespace WebReserva.EntityFramework
 
             return 0;
         }
+
+        public void SaveWrPesquisa(WrPesquisa wrPesquisa)
+        {
+            try
+            {
+                var newPesquisa = _context.WrPesquisas.Add(wrPesquisa);
+
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                //TODO log
+                throw ex;
+            }
+        }
     }
 }
