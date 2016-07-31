@@ -21,5 +21,7 @@ namespace WebReserva.Models
         public int Status { get; set; }
         public int WrTipoApartamentoId{ get; set; }
         public decimal ValorTotal { get; set; }
+        public int TipoPagamento { get; set; }
+        public string NumeroCartaoCredito { get; set; }
     }
 }

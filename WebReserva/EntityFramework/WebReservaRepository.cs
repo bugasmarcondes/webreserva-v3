@@ -324,7 +324,7 @@ namespace WebReserva.EntityFramework
                     Chd = existingReservation.Criancas,
                     CheckIn = Convert.ToDateTime(existingReservation.CheckIn, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat),
                     CheckOut = Convert.ToDateTime(existingReservation.CheckOut, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat),
-                    Cpf = "",
+                    Cpf = existingReservation.Cpf,
                     IdLetoh = 0,
                     Status = 1,
                     ApartamentoNomeHospede = existingReservation.Nome,
@@ -335,7 +335,9 @@ namespace WebReserva.EntityFramework
                     Observacao = existingReservation.Observacoes,
                     QtdUh = 1,
                     WrTipoApartamentoId = existingReservation.WrTipoApartamentoId,
-                    ValorTotal = existingReservation.ValorTotal
+                    ValorTotal = existingReservation.ValorTotal,
+                    TipoPagamento = existingReservation.TipoPagamento,
+                    NumeroCartaoCredito = existingReservation.NumeroCartaoCredito
                 };
 
                 _context.Entry(reserva).State = EntityState.Modified;
@@ -367,6 +369,12 @@ namespace WebReserva.EntityFramework
                     myMessage.Html += "					<strong>Sobrenome:</strong>";
                     myMessage.Html += "				</td>";
                     myMessage.Html += "				<td style=\"padding:0 15px;\">" + existingReservation.Sobrenome + "</td>";
+                    myMessage.Html += "			</tr>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td>";
+                    myMessage.Html += "					<strong>CPF:</strong>";
+                    myMessage.Html += "				</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + existingReservation.Cpf + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
@@ -410,12 +418,25 @@ namespace WebReserva.EntityFramework
                     myMessage.Html += "				</td>";
                     myMessage.Html += "				<td style=\"padding:0 15px;\">" + existingReservation.Observacoes + "</td>";
                     myMessage.Html += "			</tr>";
-                    //myMessage.Html += "			<tr>";
-                    //myMessage.Html += "				<td>";
-                    //myMessage.Html += "					<strong>Tipo de pagamento:</strong>";
-                    //myMessage.Html += "				</td>";
-                    //myMessage.Html += "				<td style=\"padding:0 15px;\">" + existingReservation.TipoPagamento + "</td>";
-                    //myMessage.Html += "			</tr>";
+                    myMessage.Html += "			<tr>";
+                    myMessage.Html += "				<td>";
+                    myMessage.Html += "					<strong>Tipo de pagamento:</strong>";
+                    myMessage.Html += "				</td>";
+
+                    if (existingReservation.TipoPagamento == 0)
+                    {
+                        myMessage.Html += "				<td style=\"padding:0 15px;\">Transferência bancária</td>";
+                    }
+                    else if (existingReservation.TipoPagamento == 1)
+                    {
+                        myMessage.Html += "				<td style=\"padding:0 15px;\">Cheque</td>";
+                    }
+                    else if (existingReservation.TipoPagamento == 2)
+                    {
+                        myMessage.Html += "				<td style=\"padding:0 15px;\">Cartão de crédito: " + existingReservation.NumeroCartaoCredito + "</td>";
+                    }
+
+                    myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Valor:</strong>";

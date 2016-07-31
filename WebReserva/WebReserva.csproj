@@ -260,6 +260,10 @@
     <Compile Include="Migrations\201607312212368_RemoveChegadaSaida.Designer.cs">
       <DependentUpon>201607312212368_RemoveChegadaSaida.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607312239479_AddTipoPagamento.cs" />
+    <Compile Include="Migrations\201607312239479_AddTipoPagamento.Designer.cs">
+      <DependentUpon>201607312239479_AddTipoPagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\WrBloqueioData.cs" />
     <Compile Include="Models\WrDisponibilidade.cs" />
@@ -376,6 +380,7 @@
     <Content Include="Content\global\js\jquery.countTo.js" />
     <Content Include="Content\global\js\jquery.form.min.js" />
     <Content Include="Content\global\js\jquery.magnific-popup.min.js" />
+    <Content Include="Content\global\js\jquery.mask.min.js" />
     <Content Include="Content\global\js\jquery.parallax-1.1.3.js" />
     <Content Include="Content\global\js\jquery.themepunch.revolution.min.js" />
     <Content Include="Content\global\js\jquery.themepunch.tools.min.js" />
@@ -545,6 +550,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607312212368_RemoveChegadaSaida.resx">
       <DependentUpon>201607312212368_RemoveChegadaSaida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607312239479_AddTipoPagamento.resx">
+      <DependentUpon>201607312239479_AddTipoPagamento.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -91,15 +91,20 @@
                                 <h4>DETALHES DO PAGAMENTO</h4>
                                 <p>Após preenchido os dados, clique em Reservar para efetuar sua pré-reserva. Em seguida você receberá um e-mail e um atendente entrará em contato para confirmação.</p>
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-4">
                                         <label>Nome<sup>*</sup></label>
                                         <input type="text" class="input-text" name="srNome" ng-model="srForm.nome" required id="srNome">
                                         <span class="text-danger" ng-show="srForm.srNome.$dirty && srForm.srNome.$error.required">Obrigatório</span>
                                     </div>
-                                    <div class="col-sm-6">
+                                    <div class="col-sm-4">
                                         <label>Sobrenome<sup>*</sup></label>
                                         <input type="text" class="input-text" name="srSobrenome" ng-model="srForm.sobrenome" required>
                                         <span class="text-danger" ng-show="srForm.srSobrenome.$dirty && srForm.srSobrenome.$error.required">Obrigatório</span>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label>CPF<sup>*</sup></label>
+                                        <input type="text" class="input-text" name="srCpf" ng-model="srForm.cpf" required data-mask="000.000.000-00" data-mask-clearifnotmatch="true">
+                                        <span class="text-danger" ng-show="srForm.srCpf.$dirty && srForm.srCpf.$error.required">Obrigatório</span>
                                     </div>
                                 </div>
                                 <label>Endereço<sup>*</sup></label>
@@ -128,7 +133,7 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <label>Telefone<sup>*</sup></label>
-                                        <input type="text" class="input-text" name="srTelefone" ng-model="srForm.telefone" required>
+                                        <input type="text" class="input-text" name="srTelefone" ng-model="srForm.telefone" required data-mask="(00) 0000-00009" data-mask-clearifnotmatch="true">
                                         <span class="text-danger" ng-show="srForm.srTelefone.$dirty && srForm.srTelefone.$error.required">Obrigatório</span>
                                     </div>
                                 </div>
@@ -137,23 +142,33 @@
                                 <ul class="option-bank">
                                     <li>
                                         <label class="label-radio">
-                                            <input type="radio" class="input-radio" name="chose-bank" value="0">
+                                            <input type="radio" class="input-radio" name="chose-bank" value="0" ng-model="srForm.tipoPagamento" ng-required="!srForm.tipoPagamento">
                                             Transferência bancária
                                         </label>
-                                        <p>Faça o depósito direto em nossa conta bancária. Por favor, guarde o comprovante de depósito. Sua ordem não será válida até que o depósito seja creditado em nossa conta.</p>
+                                        <div id="srCbTransferencia" ng-show="srForm.tipoPagamento == 0">
+                                            <p>Enviaremos todos os dados necessários para depósito por e-mail.</p>
+                                            <p>Faça o depósito direto em nossa conta bancária.</p>
+                                            <p>Por favor, guarde o comprovante de depósito.</p>
+                                            <p>Sua ordem não será válida até que o depósito seja creditado em nossa conta.</p>
+                                        </div>
                                     </li>
                                     <li>
                                         <label class="label-radio">
-                                            <input type="radio" class="input-radio" name="chose-bank" value="1">
+                                            <input type="radio" class="input-radio" name="chose-bank" value="1" ng-model="srForm.tipoPagamento" ng-required="!srForm.tipoPagamento">
                                             Cheque
                                         </label>
                                     </li>
                                     <li>
                                         <label class="label-radio">
-                                            <input type="radio" class="input-radio" name="chose-bank" value="2">
+                                            <input type="radio" class="input-radio" name="chose-bank" value="2" ng-model="srForm.tipoPagamento" ng-required="!srForm.tipoPagamento">
                                             Cartão de crédito
                                         </label>
                                         <img src="~/Content/global/img/icon-card.jpg" />
+                                        <div id="srCbCc" ng-show="srForm.tipoPagamento == 2">
+                                            <label>Número<sup>*</sup></label>
+                                            <input type="text" class="input-text" name="srNumeroCc" ng-model="srForm.numeroCartaoCredito" ng-required="srForm.tipoPagamento == 2" data-mask="0000 0000 0000 0000" data-mask-clearifnotmatch="true">
+                                            <span class="text-danger" ng-show="srForm.tipoPagamento == 2">Obrigatório</span>
+                                        </div>
                                     </li>
                                 </ul>
                                 <button type="submit" class="awe-btn awe-btn-13" ng-disabled="srForm.$invalid" id="btn-reservar">Reservar</button>

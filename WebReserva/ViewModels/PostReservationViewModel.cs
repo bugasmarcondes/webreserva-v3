@@ -15,7 +15,6 @@ namespace WebReserva.ViewModels
         public string Email { get; set; }
         public string Telefone { get; set; }
         public string Observacoes { get; set; }
-        public int TipoPagamento { get; set; }
         public int Adultos { get; set; }
         public int Criancas { get; set; }
         public string CheckIn { get; set; }
@@ -25,5 +24,7 @@ namespace WebReserva.ViewModels
         public int Status { get; set; }
         public int WrTipoApartamentoId { get; set; }
         public decimal ValorTotal { get; set; }
+        public int TipoPagamento { get; set; }
+        public string NumeroCartaoCredito { get; set; }
     }
 }
