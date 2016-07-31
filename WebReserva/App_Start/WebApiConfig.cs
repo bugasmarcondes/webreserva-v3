@@ -18,7 +18,13 @@ namespace WebReserva
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
-                name: "DefaultApi",
+                name: "ControllerActionApi",
+                routeTemplate: "{tenant}/api/v1/{controller}/{action}/{id}",
+                defaults: new { id = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
+                name: "ControllerApi",
                 routeTemplate: "{tenant}/api/v1/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );

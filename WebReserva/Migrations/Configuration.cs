@@ -98,6 +98,90 @@ namespace WebReserva.Migrations
                     Instagram = "https://www.instagram.com/areiaquecanta/",
                     Telefone = "(14) 3653-1382 / (14) 3653-2465",
                     LatitudeLongitude = "-22.315391, -48.050240"
+                },
+                new WrHotel
+                {
+                    Id = 5,
+                    Descricao = "<p>Aqui você desfrutará de um ambiente acolhedor, com serviços de qualidade e uma equipe preparada para indicar sempre a melhor opção para a sua hospedagem, com tarifas competitivas e condições especiais para grupos que venham fazer compras na rua 25 de março, Santa Ifigênia, Brás, Feira da madrugada, Bom Retiro e Galeria Pajé. Outro diferencial é a nossa equipe, que sempre atua de forma pró-ativa, focada em um atendimento cordial e hospitaleiro, pronta a prestar serviços que proporcionam uma estadia ainda mais aconchegante.</p>",
+                    Nome = "Uniclass Centro",
+                    HostUrl = "uniclasscentro",
+                    ImgLogo = "/Content/uniclasscentro/img/logo.png",
+                    ImgSobre01 = "/Content/uniclasscentro/img/sobre-1.jpg",
+                    ImgSobre02 = "/Content/uniclasscentro/img/sobre-2.jpg",
+                    ImgSobre03 = "/Content/uniclasscentro/img/sobre-3.jpg",
+                    MaxAdultos = 4,
+                    MaxCriancas = 4,
+                    Tema = "/Content/uniclasscentro/css/tema.css",
+                    EmailAdministrador = "bugasmarcondes@gmail.com",
+                    MsgCustomizadaEmail = "MsgCustomizadaEmail Uniclass Centro",
+                    Facebook = "https://www.facebook.com/uniclasshotelcentro/",
+                    Twitter = "",
+                    Instagram = "",
+                    Telefone = "(11) 3629-3690",
+                    LatitudeLongitude = "-23.54059, -46.6376888"
+                },
+                new WrHotel
+                {
+                    Id = 6,
+                    Descricao = "<p>Aqui você desfrutará de um ambiente acolhedor, com serviços de qualidade e uma equipe preparada para indicar sempre a melhor opção para a sua hospedagem, com tarifas competitivas e condições especiais para grupos que venham fazer compras na rua 25 de março, Santa Ifigênia, Brás, Feira da madrugada, Bom Retiro e Galeria Pajé. Outro diferencial é a nossa equipe, que sempre atua de forma pró-ativa, focada em um atendimento cordial e hospitaleiro, pronta a prestar serviços que proporcionam uma estadia ainda mais aconchegante.</p>",
+                    Nome = "Uniclass Pinheiros",
+                    HostUrl = "uniclasspinheiros",
+                    ImgLogo = "/Content/uniclasspinheiros/img/logo.png",
+                    ImgSobre01 = "/Content/uniclasspinheiros/img/sobre-1.jpg",
+                    ImgSobre02 = "/Content/uniclasspinheiros/img/sobre-2.jpg",
+                    ImgSobre03 = "/Content/uniclasspinheiros/img/sobre-3.jpg",
+                    MaxAdultos = 4,
+                    MaxCriancas = 4,
+                    Tema = "/Content/uniclasspinheiros/css/tema.css",
+                    EmailAdministrador = "bugasmarcondes@gmail.com",
+                    MsgCustomizadaEmail = "MsgCustomizadaEmail Uniclass Pinheiros",
+                    Facebook = "https://www.facebook.com/uniclasshotelcentro/",
+                    Twitter = "",
+                    Instagram = "",
+                    Telefone = "(11) 3813-7744",
+                    LatitudeLongitude = "-23.5648563, -46.690689"
+                },
+                new WrHotel
+                {
+                    Id = 7,
+                    Descricao = "<p>Inaugurado em 2006, o Vinhedo Plaza Hotel possui 68 Aptos (4 adaptados para pessoas com necessidades especiais) e 5 Bangalôs. Localizado estrategicamente a 71 km de São Paulo e a 22 km do aeroporto de Viracopos, o Vinhedo Plaza Hotel proporciona completa infraestrutura em eventos e hospedagem. O Hotel fica localizado a 5 minutos do centro da cidade de Vinhedo e o acesso à rodovia é fácil e rápido. Recentemente foi inaugurado o segundo empreendimento da rede: Valinhos Plaza Hotel (localizado na cidade de Valinhos, a 7 Km do Vinhedo Plaza Hotel).</p>",
+                    Nome = "Vinhedo Plaza Hotel",
+                    HostUrl = "vinhedoplazahotel",
+                    ImgLogo = "/Content/vinhedoplazahotel/img/logo.png",
+                    ImgSobre01 = "/Content/vinhedoplazahotel/img/sobre-1.jpg",
+                    ImgSobre02 = "/Content/vinhedoplazahotel/img/sobre-2.jpg",
+                    ImgSobre03 = "/Content/vinhedoplazahotel/img/sobre-3.jpg",
+                    MaxAdultos = 4,
+                    MaxCriancas = 4,
+                    Tema = "/Content/vinhedoplazahotel/css/tema.css",
+                    EmailAdministrador = "bugasmarcondes@gmail.com",
+                    MsgCustomizadaEmail = "MsgCustomizadaEmail Vinhedo Plaza Hotel",
+                    Facebook = "https://www.facebook.com/Vinhedo-Plaza-Hotel-197623213598519/",
+                    Twitter = "",
+                    Instagram = "",
+                    Telefone = "(19) 3886-6020 / (19) 3876-3867 / (19) 3826-2354",
+                    LatitudeLongitude = "-23.038764, -46.975073"
+                },
+                new WrHotel
+                {
+                    Id = 8,
+                    Descricao = "<p>O Da Vinci Hotel em Manaus oferece a máxima experiência de estar em Manaus e é localizado no bairro elegante de Adrianópolis. O hotel é próximo do Shopping Manauara, Teatro Amazonas, fica a 15 minutos do aeroporto, conta com academia, TV a Cabo, WiFi e estacionamento gratuitos e um restaurante com saborosos pratos que combinam cozinha tradicional e internacional.</p>",
+                    Nome = "Da Vinci Hotel & Conventions",
+                    HostUrl = "davincihotel",
+                    ImgLogo = "/Content/davincihotel/img/logo.png",
+                    ImgSobre01 = "/Content/davincihotel/img/sobre-1.jpg",
+                    ImgSobre02 = "/Content/davincihotel/img/sobre-2.jpg",
+                    ImgSobre03 = "/Content/davincihotel/img/sobre-3.jpg",
+                    MaxAdultos = 4,
+                    MaxCriancas = 4,
+                    Tema = "/Content/davincihotel/css/tema.css",
+                    EmailAdministrador = "bugasmarcondes@gmail.com",
+                    MsgCustomizadaEmail = "MsgCustomizadaEmail Da Vinci Hotel",
+                    Facebook = "",
+                    Twitter = "https://twitter.com/davincihotelam",
+                    Instagram = "",
+                    Telefone = "(92) 3663-1213",
+                    LatitudeLongitude = "-3.106404, -60.011149"
                 }
             );
 
@@ -106,8 +190,8 @@ namespace WebReserva.Migrations
                 new WrBloqueioData
                 {
                     Id = 1,
-                    Inicio = new DateTime(2016, 02, 06),
-                    Fim = new DateTime(2016, 02, 10),
+                    Inicio = new DateTime(2016, 10, 06),
+                    Fim = new DateTime(2016, 10, 10),
                     Pacote = true,
                     Titulo = "Carnaval",
                     Descricao = "Venha curtir o Carnaval 2016 com a gente!",
@@ -120,8 +204,8 @@ namespace WebReserva.Migrations
                 new WrBloqueioData
                 {
                     Id = 2,
-                    Inicio = new DateTime(2016, 03, 25),
-                    Fim = new DateTime(2016, 03, 27),
+                    Inicio = new DateTime(2016, 11, 25),
+                    Fim = new DateTime(2016, 11, 27),
                     Pacote = true,
                     Titulo = "Páscoa",
                     Descricao = "Venha curtir a Páscoa 2016 com a gente!",
@@ -134,50 +218,8 @@ namespace WebReserva.Migrations
                 new WrBloqueioData
                 {
                     Id = 3,
-                    Inicio = new DateTime(2016, 04, 21),
-                    Fim = new DateTime(2016, 04, 24),
-                    Pacote = true,
-                    Titulo = "Tiradentes",
-                    Descricao = "Venha curtir o Tiradentes 2016 com a gente!",
-                    DescricaoSlider = "Joaquim José da Silva Xavier!",
-                    Mensagem = "Mensagem do pacote de Tiradentes",
-                    Img01 = "/Content/hotelgrandelago/img/tiradentes-2016.jpg",
-                    Valor = 500,
-                    WrHotelId = 1
-                },
-                new WrBloqueioData
-                {
-                    Id = 4,
-                    Inicio = new DateTime(2016, 05, 26),
-                    Fim = new DateTime(2016, 05, 29),
-                    Pacote = true,
-                    Titulo = "Corpus Christi",
-                    Descricao = "Venha curtir o Corpus Christi 2016 com a gente!",
-                    DescricaoSlider = "Domini!",
-                    Mensagem = "Mensagem do pacote de Corpus Christi",
-                    Img01 = "/Content/hotelgrandelago/img/corpus-christi-2016.jpg",
-                    Valor = 600,
-                    WrHotelId = 1
-                },
-                new WrBloqueioData
-                {
-                    Id = 5,
-                    Inicio = new DateTime(2016, 11, 12),
-                    Fim = new DateTime(2016, 11, 15),
-                    Pacote = true,
-                    Titulo = "Proclamação da República",
-                    Descricao = "Venha curtir a Proclamação da República 2016 com a gente!",
-                    DescricaoSlider = "Deodoro Fonseca!",
-                    Mensagem = "Mensagem do pacote da República",
-                    Img01 = "/Content/hotelgrandelago/img/republica-2016.jpg",
-                    Valor = 700,
-                    WrHotelId = 1
-                },
-                new WrBloqueioData
-                {
-                    Id = 6,
-                    Inicio = new DateTime(2016, 02, 06),
-                    Fim = new DateTime(2016, 02, 10),
+                    Inicio = new DateTime(2016, 10, 06),
+                    Fim = new DateTime(2016, 10, 10),
                     Pacote = true,
                     Titulo = "Carnaval",
                     Descricao = "Venha curtir o Carnaval 2016 com a gente!",
@@ -189,9 +231,9 @@ namespace WebReserva.Migrations
                 },
                 new WrBloqueioData
                 {
-                    Id = 7,
-                    Inicio = new DateTime(2016, 03, 25),
-                    Fim = new DateTime(2016, 03, 27),
+                    Id = 4,
+                    Inicio = new DateTime(2016, 11, 25),
+                    Fim = new DateTime(2016, 11, 27),
                     Pacote = true,
                     Titulo = "Páscoa",
                     Descricao = "Venha curtir a Páscoa 2016 com a gente!",
@@ -203,51 +245,9 @@ namespace WebReserva.Migrations
                 },
                 new WrBloqueioData
                 {
-                    Id = 8,
-                    Inicio = new DateTime(2016, 04, 21),
-                    Fim = new DateTime(2016, 04, 24),
-                    Pacote = true,
-                    Titulo = "Tiradentes",
-                    Descricao = "Venha curtir o Tiradentes 2016 com a gente!",
-                    DescricaoSlider = "Joaquim José da Silva Xavier!",
-                    Mensagem = "Mensagem do pacote de Tiradentes",
-                    Img01 = "/Content/maresiasbeachhotel/img/tiradentes-2016.jpg",
-                    Valor = 500,
-                    WrHotelId = 2
-                },
-                new WrBloqueioData
-                {
-                    Id = 9,
-                    Inicio = new DateTime(2016, 05, 26),
-                    Fim = new DateTime(2016, 05, 29),
-                    Pacote = true,
-                    Titulo = "Corpus Christi",
-                    Descricao = "Venha curtir o Corpus Christi 2016 com a gente!",
-                    DescricaoSlider = "Domini!",
-                    Mensagem = "Mensagem do pacote de Corpus Christi",
-                    Img01 = "/Content/maresiasbeachhotel/img/corpus-christi-2016.jpg",
-                    Valor = 600,
-                    WrHotelId = 2
-                },
-                new WrBloqueioData
-                {
-                    Id = 10,
-                    Inicio = new DateTime(2016, 11, 12),
-                    Fim = new DateTime(2016, 11, 15),
-                    Pacote = true,
-                    Titulo = "Proclamação da República",
-                    Descricao = "Venha curtir a Proclamação da República 2016 com a gente!",
-                    DescricaoSlider = "Deodoro Fonseca!",
-                    Mensagem = "Mensagem do pacote da República",
-                    Img01 = "/Content/maresiasbeachhotel/img/republica-2016.jpg",
-                    Valor = 700,
-                    WrHotelId = 2
-                },
-                new WrBloqueioData
-                {
-                    Id = 11,
-                    Inicio = new DateTime(2016, 02, 06),
-                    Fim = new DateTime(2016, 02, 10),
+                    Id = 5,
+                    Inicio = new DateTime(2016, 10, 06),
+                    Fim = new DateTime(2016, 10, 10),
                     Pacote = true,
                     Titulo = "Carnaval",
                     Descricao = "Venha curtir o Carnaval 2016 com a gente!",
@@ -259,9 +259,9 @@ namespace WebReserva.Migrations
                 },
                 new WrBloqueioData
                 {
-                    Id = 12,
-                    Inicio = new DateTime(2016, 03, 25),
-                    Fim = new DateTime(2016, 03, 27),
+                    Id = 6,
+                    Inicio = new DateTime(2016, 11, 25),
+                    Fim = new DateTime(2016, 11, 27),
                     Pacote = true,
                     Titulo = "Páscoa",
                     Descricao = "Venha curtir a Páscoa 2016 com a gente!",
@@ -273,51 +273,9 @@ namespace WebReserva.Migrations
                 },
                 new WrBloqueioData
                 {
-                    Id = 13,
-                    Inicio = new DateTime(2016, 04, 21),
-                    Fim = new DateTime(2016, 04, 24),
-                    Pacote = true,
-                    Titulo = "Tiradentes",
-                    Descricao = "Venha curtir o Tiradentes 2016 com a gente!",
-                    DescricaoSlider = "Joaquim José da Silva Xavier!",
-                    Mensagem = "Mensagem do pacote de Tiradentes",
-                    Img01 = "/Content/sanjaya/img/tiradentes-2016.jpg",
-                    Valor = 500,
-                    WrHotelId = 3
-                },
-                new WrBloqueioData
-                {
-                    Id = 14,
-                    Inicio = new DateTime(2016, 05, 26),
-                    Fim = new DateTime(2016, 05, 29),
-                    Pacote = true,
-                    Titulo = "Corpus Christi",
-                    Descricao = "Venha curtir o Corpus Christi 2016 com a gente!",
-                    DescricaoSlider = "Domini!",
-                    Mensagem = "Mensagem do pacote de Corpus Christi",
-                    Img01 = "/Content/sanjaya/img/corpus-christi-2016.jpg",
-                    Valor = 600,
-                    WrHotelId = 3
-                },
-                new WrBloqueioData
-                {
-                    Id = 15,
-                    Inicio = new DateTime(2016, 11, 12),
-                    Fim = new DateTime(2016, 11, 15),
-                    Pacote = true,
-                    Titulo = "Proclamação da República",
-                    Descricao = "Venha curtir a Proclamação da República 2016 com a gente!",
-                    DescricaoSlider = "Deodoro Fonseca!",
-                    Mensagem = "Mensagem do pacote da República",
-                    Img01 = "/Content/sanjaya/img/republica-2016.jpg",
-                    Valor = 700,
-                    WrHotelId = 3
-                },
-                new WrBloqueioData
-                {
-                    Id = 16,
-                    Inicio = new DateTime(2016, 02, 06),
-                    Fim = new DateTime(2016, 02, 10),
+                    Id = 7,
+                    Inicio = new DateTime(2016, 10, 06),
+                    Fim = new DateTime(2016, 10, 10),
                     Pacote = true,
                     Titulo = "Carnaval",
                     Descricao = "Venha curtir o Carnaval 2016 com a gente!",
@@ -329,9 +287,9 @@ namespace WebReserva.Migrations
                 },
                 new WrBloqueioData
                 {
-                    Id = 17,
-                    Inicio = new DateTime(2016, 03, 25),
-                    Fim = new DateTime(2016, 03, 27),
+                    Id = 8,
+                    Inicio = new DateTime(2016, 11, 25),
+                    Fim = new DateTime(2016, 11, 27),
                     Pacote = true,
                     Titulo = "Páscoa",
                     Descricao = "Venha curtir a Páscoa 2016 com a gente!",
@@ -343,45 +301,115 @@ namespace WebReserva.Migrations
                 },
                 new WrBloqueioData
                 {
-                    Id = 18,
-                    Inicio = new DateTime(2016, 04, 21),
-                    Fim = new DateTime(2016, 04, 24),
+                    Id = 9,
+                    Inicio = new DateTime(2016, 10, 06),
+                    Fim = new DateTime(2016, 10, 10),
                     Pacote = true,
-                    Titulo = "Tiradentes",
-                    Descricao = "Venha curtir o Tiradentes 2016 com a gente!",
-                    DescricaoSlider = "Joaquim José da Silva Xavier!",
-                    Mensagem = "Mensagem do pacote de Tiradentes",
-                    Img01 = "/Content/areiaquecanta/img/tiradentes-2016.jpg",
-                    Valor = 500,
-                    WrHotelId = 4
+                    Titulo = "Carnaval",
+                    Descricao = "Venha curtir o Carnaval 2016 com a gente!",
+                    DescricaoSlider = "Caia na folia!",
+                    Mensagem = "Mensagem do pacote de Carnaval",
+                    Img01 = "/Content/areiaquecanta/img/carnaval-2016.jpg",
+                    Valor = 300,
+                    WrHotelId = 5
                 },
                 new WrBloqueioData
                 {
-                    Id = 19,
-                    Inicio = new DateTime(2016, 05, 26),
-                    Fim = new DateTime(2016, 05, 29),
+                    Id = 10,
+                    Inicio = new DateTime(2016, 11, 25),
+                    Fim = new DateTime(2016, 11, 27),
                     Pacote = true,
-                    Titulo = "Corpus Christi",
-                    Descricao = "Venha curtir o Corpus Christi 2016 com a gente!",
-                    DescricaoSlider = "Domini!",
-                    Mensagem = "Mensagem do pacote de Corpus Christi",
-                    Img01 = "/Content/areiaquecanta/img/corpus-christi-2016.jpg",
-                    Valor = 600,
-                    WrHotelId = 4
+                    Titulo = "Páscoa",
+                    Descricao = "Venha curtir a Páscoa 2016 com a gente!",
+                    DescricaoSlider = "Celebração cristã!",
+                    Mensagem = "Mensagem do pacote de Páscoa",
+                    Img01 = "/Content/areiaquecanta/img/pascoa-2016.jpg",
+                    Valor = 400,
+                    WrHotelId = 5
                 },
                 new WrBloqueioData
                 {
-                    Id = 20,
-                    Inicio = new DateTime(2016, 11, 12),
-                    Fim = new DateTime(2016, 11, 15),
+                    Id = 11,
+                    Inicio = new DateTime(2016, 10, 06),
+                    Fim = new DateTime(2016, 10, 10),
                     Pacote = true,
-                    Titulo = "Proclamação da República",
-                    Descricao = "Venha curtir a Proclamação da República 2016 com a gente!",
-                    DescricaoSlider = "Deodoro Fonseca!",
-                    Mensagem = "Mensagem do pacote da República",
-                    Img01 = "/Content/areiaquecanta/img/republica-2016.jpg",
-                    Valor = 700,
-                    WrHotelId = 4
+                    Titulo = "Carnaval",
+                    Descricao = "Venha curtir o Carnaval 2016 com a gente!",
+                    DescricaoSlider = "Caia na folia!",
+                    Mensagem = "Mensagem do pacote de Carnaval",
+                    Img01 = "/Content/areiaquecanta/img/carnaval-2016.jpg",
+                    Valor = 300,
+                    WrHotelId = 6
+                },
+                new WrBloqueioData
+                {
+                    Id = 12,
+                    Inicio = new DateTime(2016, 11, 25),
+                    Fim = new DateTime(2016, 11, 27),
+                    Pacote = true,
+                    Titulo = "Páscoa",
+                    Descricao = "Venha curtir a Páscoa 2016 com a gente!",
+                    DescricaoSlider = "Celebração cristã!",
+                    Mensagem = "Mensagem do pacote de Páscoa",
+                    Img01 = "/Content/areiaquecanta/img/pascoa-2016.jpg",
+                    Valor = 400,
+                    WrHotelId = 6
+                },
+                new WrBloqueioData
+                {
+                    Id = 13,
+                    Inicio = new DateTime(2016, 10, 06),
+                    Fim = new DateTime(2016, 10, 10),
+                    Pacote = true,
+                    Titulo = "Carnaval",
+                    Descricao = "Venha curtir o Carnaval 2016 com a gente!",
+                    DescricaoSlider = "Caia na folia!",
+                    Mensagem = "Mensagem do pacote de Carnaval",
+                    Img01 = "/Content/areiaquecanta/img/carnaval-2016.jpg",
+                    Valor = 300,
+                    WrHotelId = 7
+                },
+                new WrBloqueioData
+                {
+                    Id = 14,
+                    Inicio = new DateTime(2016, 11, 25),
+                    Fim = new DateTime(2016, 11, 27),
+                    Pacote = true,
+                    Titulo = "Páscoa",
+                    Descricao = "Venha curtir a Páscoa 2016 com a gente!",
+                    DescricaoSlider = "Celebração cristã!",
+                    Mensagem = "Mensagem do pacote de Páscoa",
+                    Img01 = "/Content/areiaquecanta/img/pascoa-2016.jpg",
+                    Valor = 400,
+                    WrHotelId = 7
+                },
+                new WrBloqueioData
+                {
+                    Id = 15,
+                    Inicio = new DateTime(2016, 10, 06),
+                    Fim = new DateTime(2016, 10, 10),
+                    Pacote = true,
+                    Titulo = "Carnaval",
+                    Descricao = "Venha curtir o Carnaval 2016 com a gente!",
+                    DescricaoSlider = "Caia na folia!",
+                    Mensagem = "Mensagem do pacote de Carnaval",
+                    Img01 = "/Content/areiaquecanta/img/carnaval-2016.jpg",
+                    Valor = 300,
+                    WrHotelId = 8
+                },
+                new WrBloqueioData
+                {
+                    Id = 16,
+                    Inicio = new DateTime(2016, 11, 25),
+                    Fim = new DateTime(2016, 11, 27),
+                    Pacote = true,
+                    Titulo = "Páscoa",
+                    Descricao = "Venha curtir a Páscoa 2016 com a gente!",
+                    DescricaoSlider = "Celebração cristã!",
+                    Mensagem = "Mensagem do pacote de Páscoa",
+                    Img01 = "/Content/areiaquecanta/img/pascoa-2016.jpg",
+                    Valor = 400,
+                    WrHotelId = 8
                 }
             );
 
@@ -481,6 +509,120 @@ namespace WebReserva.Migrations
                     OpcionalDescricao03 = "",
                     IdLetoh = 0,
                     WrHotelId = 4
+                },
+                new WrTipoApartamento
+                {
+                    Id = 6,
+                    Nome = "Duplo Standard",
+                    Descricao = "Quarto padrão com uma cama de casal.",
+                    DestaqueTitulo = "Equipado com Ar-Condicionado",
+                    DestaqueDescricao = "Perfeito para o casal.",
+                    Img01 = "/Content/uniclasscentro/img/duplo_standard_g01.jpg",
+                    Img02 = "/Content/uniclasscentro/img/duplo_standard_g02.jpg",
+                    Img03 = "/Content/uniclasscentro/img/duplo_standard_g03.jpg",
+                    OpcionalTitulo01 = "Banheiro",
+                    OpcionalDescricao01 = "Com chuveiro",
+                    OpcionalTitulo02 = "Serviço de Despertador",
+                    OpcionalDescricao02 = "",
+                    OpcionalTitulo03 = "Frigobar, Telefone e Televisão",
+                    OpcionalDescricao03 = "",
+                    IdLetoh = 0,
+                    WrHotelId = 5
+                },
+                new WrTipoApartamento
+                {
+                    Id = 7,
+                    Nome = "Standard com 2 camas de solteiro",
+                    Descricao = "Quarto padrão com duas camas de solteiro.",
+                    DestaqueTitulo = "Equipado com Ar-Condicionado",
+                    DestaqueDescricao = "",
+                    Img01 = "/Content/uniclasscentro/img/solteiro_standard_g01.jpg",
+                    Img02 = "/Content/uniclasscentro/img/solteiro_standard_g02.jpg",
+                    Img03 = "/Content/uniclasscentro/img/solteiro_standard_g03.jpg",
+                    OpcionalTitulo01 = "Banheiro",
+                    OpcionalDescricao01 = "Com chuveiro",
+                    OpcionalTitulo02 = "Serviço de Despertador",
+                    OpcionalDescricao02 = "",
+                    OpcionalTitulo03 = "Frigobar, Telefone e Televisão",
+                    OpcionalDescricao03 = "",
+                    IdLetoh = 0,
+                    WrHotelId = 5
+                },
+                new WrTipoApartamento
+                {
+                    Id = 8,
+                    Nome = "Standard triplo",
+                    Descricao = "Quarto padrão com três camas de solteiro.",
+                    DestaqueTitulo = "Equipado com Ar-Condicionado",
+                    DestaqueDescricao = "",
+                    Img01 = "/Content/uniclasscentro/img/triplo_standard_g01.jpg",
+                    Img02 = "/Content/uniclasscentro/img/triplo_standard_g02.jpg",
+                    Img03 = "/Content/uniclasscentro/img/triplo_standard_g03.jpg",
+                    OpcionalTitulo01 = "Banheiro",
+                    OpcionalDescricao01 = "Com chuveiro",
+                    OpcionalTitulo02 = "Serviço de Despertador",
+                    OpcionalDescricao02 = "",
+                    OpcionalTitulo03 = "Frigobar, Telefone e Televisão",
+                    OpcionalDescricao03 = "",
+                    IdLetoh = 0,
+                    WrHotelId = 5
+                },
+                new WrTipoApartamento
+                {
+                    Id = 9,
+                    Nome = "Duplo Standard",
+                    Descricao = "Quarto padrão com uma cama de casal.",
+                    DestaqueTitulo = "Equipado com Ar-Condicionado",
+                    DestaqueDescricao = "Perfeito para o casal.",
+                    Img01 = "/Content/uniclasspinheiros/img/duplo_standard_g01.jpg",
+                    Img02 = "/Content/uniclasspinheiros/img/duplo_standard_g02.jpg",
+                    Img03 = "/Content/uniclasspinheiros/img/duplo_standard_g03.jpg",
+                    OpcionalTitulo01 = "Banheiro",
+                    OpcionalDescricao01 = "Com chuveiro",
+                    OpcionalTitulo02 = "Serviço de Despertador",
+                    OpcionalDescricao02 = "",
+                    OpcionalTitulo03 = "Frigobar, Telefone e Televisão",
+                    OpcionalDescricao03 = "",
+                    IdLetoh = 0,
+                    WrHotelId = 6
+                },
+                new WrTipoApartamento
+                {
+                    Id = 10,
+                    Nome = "Standard com 2 camas de solteiro",
+                    Descricao = "Quarto padrão com duas camas de solteiro.",
+                    DestaqueTitulo = "Equipado com Ar-Condicionado",
+                    DestaqueDescricao = "",
+                    Img01 = "/Content/uniclasspinheiros/img/solteiro_standard_g01.jpg",
+                    Img02 = "/Content/uniclasspinheiros/img/solteiro_standard_g02.jpg",
+                    Img03 = "/Content/uniclasspinheiros/img/solteiro_standard_g03.jpg",
+                    OpcionalTitulo01 = "Banheiro",
+                    OpcionalDescricao01 = "Com chuveiro",
+                    OpcionalTitulo02 = "Serviço de Despertador",
+                    OpcionalDescricao02 = "",
+                    OpcionalTitulo03 = "Frigobar, Telefone e Televisão",
+                    OpcionalDescricao03 = "",
+                    IdLetoh = 0,
+                    WrHotelId = 6
+                },
+                new WrTipoApartamento
+                {
+                    Id = 11,
+                    Nome = "Standard triplo",
+                    Descricao = "Quarto padrão com três camas de solteiro.",
+                    DestaqueTitulo = "Equipado com Ar-Condicionado",
+                    DestaqueDescricao = "",
+                    Img01 = "/Content/uniclasspinheiros/img/triplo_standard_g01.jpg",
+                    Img02 = "/Content/uniclasspinheiros/img/triplo_standard_g02.jpg",
+                    Img03 = "/Content/uniclasspinheiros/img/triplo_standard_g03.jpg",
+                    OpcionalTitulo01 = "Banheiro",
+                    OpcionalDescricao01 = "Com chuveiro",
+                    OpcionalTitulo02 = "Serviço de Despertador",
+                    OpcionalDescricao02 = "",
+                    OpcionalTitulo03 = "Frigobar, Telefone e Televisão",
+                    OpcionalDescricao03 = "",
+                    IdLetoh = 0,
+                    WrHotelId = 6
                 }
             );
         }

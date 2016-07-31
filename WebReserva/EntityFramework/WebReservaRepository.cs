@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data.Entity;
 using System.Data.Entity.SqlServer;
 using System.Linq;
 using System.Net.Mail;
@@ -217,7 +218,8 @@ namespace WebReserva.EntityFramework
             var availability = (from a in _context.WrDisponibilidades
                                 where a.Data >= sectionAvailability.CheckIn &&
                                       a.Data < sectionAvailability.CheckOut &&
-                                      a.Quantidade > 0
+                                      a.Quantidade > 0 &&
+                                      a.WrTipoApartamento.WrHotelId == sectionAvailability.WrHotelId
                                 group a by a.WrTipoApartamentoId into g
                                 select new SectionRoomViewModel
                                 {
@@ -303,9 +305,9 @@ namespace WebReserva.EntityFramework
             return availability;
         }
 
-        public int SaveReservation(PostReservationViewModel newReservation)
+        public int UpdateReservation(PostReservationViewModel existingReservation)
         {
-            var wrHotel = _context.WrHotels.Where(a => a.Id == newReservation.WrHotelId).SingleOrDefault();
+            var wrHotel = _context.WrHotels.Where(a => a.Id == existingReservation.WrHotelId).SingleOrDefault();
 
             if (wrHotel == null)
             {
@@ -317,27 +319,26 @@ namespace WebReserva.EntityFramework
             {
                 var reserva = new WrReserva()
                 {
-                    Adulto = newReservation.Adultos,
-                    Chd = newReservation.Criancas,
-                    CheckIn = Convert.ToDateTime(newReservation.CheckIn, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat),
-                    CheckOut = Convert.ToDateTime(newReservation.CheckOut, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat),
-                    Chegada = DateTime.Now,
-                    Saida = DateTime.Now,
+                    Id = existingReservation.WrReservaId,
+                    Adulto = existingReservation.Adultos,
+                    Chd = existingReservation.Criancas,
+                    CheckIn = Convert.ToDateTime(existingReservation.CheckIn, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat),
+                    CheckOut = Convert.ToDateTime(existingReservation.CheckOut, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat),
                     Cpf = "",
                     IdLetoh = 0,
-                    Status = 0,
-                    ApartamentoNomeHospede = newReservation.Nome,
+                    Status = 1,
+                    ApartamentoNomeHospede = existingReservation.Nome,
                     DataIntegra = DateTime.Now,
-                    Email = newReservation.Email,
-                    Nome = newReservation.Nome,
-                    Telefone = newReservation.Telefone,
-                    Observacao = newReservation.Observacoes,
+                    Email = existingReservation.Email,
+                    Nome = existingReservation.Nome,
+                    Telefone = existingReservation.Telefone,
+                    Observacao = existingReservation.Observacoes,
                     QtdUh = 1,
-                    WrTipoApartamentoId = newReservation.WrTipoApartamentoId,
-                    ValorTotal = newReservation.ValorTotal
+                    WrTipoApartamentoId = existingReservation.WrTipoApartamentoId,
+                    ValorTotal = existingReservation.ValorTotal
                 };
 
-                _context.WrReservas.Add(reserva);
+                _context.Entry(reserva).State = EntityState.Modified;
 
                 if (_context.SaveChanges() > 0)
                 {
@@ -359,67 +360,67 @@ namespace WebReserva.EntityFramework
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Nome:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Nome + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + existingReservation.Nome + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Sobrenome:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Sobrenome + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + existingReservation.Sobrenome + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Endereço:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Endereco + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + existingReservation.Endereco + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Complemento:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Complemento + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + existingReservation.Complemento + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Cidade:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Cidade + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + existingReservation.Cidade + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Estado:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Estado + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + existingReservation.Estado + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Email:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Email + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + existingReservation.Email + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Telefone:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Telefone + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + existingReservation.Telefone + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Observações:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.Observacoes + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + existingReservation.Observacoes + "</td>";
                     myMessage.Html += "			</tr>";
                     //myMessage.Html += "			<tr>";
                     //myMessage.Html += "				<td>";
                     //myMessage.Html += "					<strong>Tipo de pagamento:</strong>";
                     //myMessage.Html += "				</td>";
-                    //myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.TipoPagamento + "</td>";
+                    //myMessage.Html += "				<td style=\"padding:0 15px;\">" + existingReservation.TipoPagamento + "</td>";
                     //myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Valor:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.ValorTotal + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + existingReservation.ValorTotal + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
@@ -443,13 +444,13 @@ namespace WebReserva.EntityFramework
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Check-in:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.CheckIn + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + existingReservation.CheckIn + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "			<tr>";
                     myMessage.Html += "				<td>";
                     myMessage.Html += "					<strong>Check-out:</strong>";
                     myMessage.Html += "				</td>";
-                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + newReservation.CheckOut + "</td>";
+                    myMessage.Html += "				<td style=\"padding:0 15px;\">" + existingReservation.CheckOut + "</td>";
                     myMessage.Html += "			</tr>";
                     myMessage.Html += "		</tbody>";
                     myMessage.Html += "	</table>";
@@ -478,6 +479,44 @@ namespace WebReserva.EntityFramework
                 var newPesquisa = _context.WrPesquisas.Add(wrPesquisa);
 
                 _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                //TODO log
+                throw ex;
+            }
+        }
+
+        public int SaveReservationSearch(PostReservationSearchViewModel reservationSearch)
+        {
+            var wrHotel = _context.WrHotels.Where(a => a.Id == reservationSearch.WrHotelId).SingleOrDefault();
+
+            if (wrHotel == null)
+            {
+                throw new Exception("Hotel não encontrado");
+            }
+
+            //TODO conferir se ainda precisa converter datas para formato correto
+            try
+            {
+                var reserva = new WrReserva()
+                {
+                    CheckIn = Convert.ToDateTime(reservationSearch.CheckIn, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat),
+                    CheckOut = Convert.ToDateTime(reservationSearch.CheckOut, System.Globalization.CultureInfo.GetCultureInfo("pt-BR").DateTimeFormat),
+                    Status = 0,
+                    Email = reservationSearch.Email,
+                    Nome = reservationSearch.Nome,
+                    WrTipoApartamentoId = reservationSearch.WrTipoApartamentoId
+                };
+
+                _context.WrReservas.Add(reserva);
+
+                if (_context.SaveChanges() > 0)
+                {
+                    return reserva.Id;
+                }
+
+                return 0;
             }
             catch (Exception ex)
             {

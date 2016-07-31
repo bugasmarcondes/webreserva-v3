@@ -18,8 +18,6 @@ namespace WebReserva.Models
         public string Telefone { get; set; }
         public string Cpf { get; set; }
         public string ApartamentoNomeHospede { get; set; }
-        public DateTime Chegada { get; set; }
-        public DateTime Saida { get; set; }
         public int Status { get; set; }
         public int WrTipoApartamentoId{ get; set; }
         public decimal ValorTotal { get; set; }

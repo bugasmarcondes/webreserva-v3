@@ -1,7 +1,40 @@
 ﻿@model WebReserva.ViewModels.PostDetalhesViewMovel
 
 <section class="section-reservation-page bg-white" ng-controller="wrSectionReservationController">
-    <form novalidate name="srForm" ng-submit="saveReservation()">
+    <form novalidate name="srFormSearch" ng-submit="saveReservationSearch()" id="srFormSearch">
+        <div class="container">
+            <div class="reservation-page">
+                <div class="row">
+                    <div class="col-md-8 col-lg-9">
+                        <div class="reservation_content">
+                            <div class="reservation-billing-detail">
+                                <h4>INFORMAÇÕES DO HÓSPEDE</h4>
+                                <p>Por favor, se identifique.</p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label>Nome<sup>*</sup></label>
+                                        <input type="text" class="input-text" name="srNome" ng-model="srFormSearch.nome" required>
+                                        <span class="text-danger" ng-show="srFormSearch.srNome.$dirty && srFormSearch.srNome.$error.required">Obrigatório</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <label>Email<sup>*</sup></label>
+                                        <input type="email" class="input-text" name="srEmail" ng-model="srFormSearch.email" required>
+                                        <span class="text-danger" ng-show="srFormSearch.srEmail.$dirty && srFormSearch.srEmail.$error.required">Obrigatório</span>
+                                        <span class="text-danger" ng-show="srFormSearch.srEmail.$dirty && srFormSearch.srEmail.$error.email">Email inválido</span>
+                                    </div>
+                                </div>
+                                <button type="submit" class="awe-btn awe-btn-13" ng-disabled="srFormSearch.$invalid" id="btn-salvar-pesquisa">Continuar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <form novalidate name="srForm" ng-submit="updateReservation()" class="hide" id="srForm">
         <div class="container">
             <div class="reservation-page">
                 <div class="row">
@@ -13,6 +46,7 @@
                                     <li>
                                         <span>Check-in</span>
                                         <span>@Model.CheckIn</span>
+                                        <input type="hidden" id="srReservaId">
                                         <input type="hidden" id="srCheckin" value="@Model.CheckIn">
                                         <input type="hidden" id="srEntrada" value="">
                                     </li>
@@ -59,7 +93,7 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <label>Nome<sup>*</sup></label>
-                                        <input type="text" class="input-text" name="srNome" ng-model="srForm.nome" required>
+                                        <input type="text" class="input-text" name="srNome" ng-model="srForm.nome" required id="srNome">
                                         <span class="text-danger" ng-show="srForm.srNome.$dirty && srForm.srNome.$error.required">Obrigatório</span>
                                     </div>
                                     <div class="col-sm-6">
@@ -88,7 +122,7 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <label>Email<sup>*</sup></label>
-                                        <input type="email" class="input-text" name="srEmail" ng-model="srForm.email" required>
+                                        <input type="email" class="input-text" name="srEmail" ng-model="srForm.email" required id="srEmail">
                                         <span class="text-danger" ng-show="srForm.srEmail.$dirty && srForm.srEmail.$error.required">Obrigatório</span>
                                         <span class="text-danger" ng-show="srForm.srEmail.$dirty && srForm.srEmail.$error.email">Email inválido</span>
                                     </div>

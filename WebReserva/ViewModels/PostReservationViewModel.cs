@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace WebReserva.ViewModels
 {
     public class PostReservationViewModel
     {
+        public int WrReservaId { get; set; }
         public int WrHotelId { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
@@ -22,8 +20,6 @@ namespace WebReserva.ViewModels
         public int Criancas { get; set; }
         public string CheckIn { get; set; }
         public string CheckOut { get; set; }
-        public DateTime Chegada { get; set; }
-        public DateTime Saida { get; set; }
         public string Cpf { get; set; }
         public int IdLetoh { get; set; }
         public int Status { get; set; }

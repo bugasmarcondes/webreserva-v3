@@ -18,11 +18,32 @@ namespace WebReserva.Controllers.Api
             _repository = repository;
         }
 
-        public HttpResponseMessage Post([FromBody]PostReservationViewModel newReservation)
+        [HttpPost]
+        public HttpResponseMessage SaveReservationSearch([FromBody]PostReservationSearchViewModel reservationSearch)
         {
             try
             {
-                if (_repository.SaveReservation(newReservation) > 0)
+                var reservaId = _repository.SaveReservationSearch(reservationSearch);
+
+                if (reservaId > 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, reservaId);
+                }
+
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Oops! Algo deu errado.\nEstamos consertando! Por favor volte em instantes.");
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex);
+            }
+        }
+
+        [HttpPost]
+        public HttpResponseMessage UpdateReservation([FromBody]PostReservationViewModel existingReservation)
+        {
+            try
+            {
+                if (_repository.UpdateReservation(existingReservation) > 0)
                 {
                     return Request.CreateResponse(HttpStatusCode.OK);
                 }

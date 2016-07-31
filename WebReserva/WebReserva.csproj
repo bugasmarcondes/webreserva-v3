@@ -256,6 +256,10 @@
     <Compile Include="Migrations\201607270056218_Add WrPesquisa.Designer.cs">
       <DependentUpon>201607270056218_Add WrPesquisa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607312212368_RemoveChegadaSaida.cs" />
+    <Compile Include="Migrations\201607312212368_RemoveChegadaSaida.Designer.cs">
+      <DependentUpon>201607312212368_RemoveChegadaSaida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\WrBloqueioData.cs" />
     <Compile Include="Models\WrDisponibilidade.cs" />
@@ -268,6 +272,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\PageReservaViewModel.cs" />
     <Compile Include="ViewModels\PostDetalhesViewMovel.cs" />
+    <Compile Include="ViewModels\PostReservationSearchViewModel.cs" />
     <Compile Include="ViewModels\PostReservationViewModel.cs" />
     <Compile Include="ViewModels\SectionAcomodacaoViewModel.cs" />
     <Compile Include="ViewModels\PageAvailabilityViewModel.cs" />
@@ -414,6 +419,36 @@
     <Content Include="Content\sanjaya\img\sobre-2.jpg" />
     <Content Include="Content\sanjaya\img\sobre-3.jpg" />
     <Content Include="Content\sanjaya\img\tiradentes-2016.jpg" />
+    <Content Include="Content\uniclasscentro\css\tema.css" />
+    <Content Include="Content\uniclasscentro\img\carnaval-2016.jpg" />
+    <Content Include="Content\uniclasscentro\img\duplo_standard_g01.jpg" />
+    <Content Include="Content\uniclasscentro\img\duplo_standard_g02.jpg" />
+    <Content Include="Content\uniclasscentro\img\duplo_standard_g03.jpg" />
+    <Content Include="Content\uniclasscentro\img\hotel-1.jpg" />
+    <Content Include="Content\uniclasscentro\img\logo.png" />
+    <Content Include="Content\uniclasscentro\img\pascoa-2016.jpg" />
+    <Content Include="Content\uniclasscentro\img\sobre-1.jpg" />
+    <Content Include="Content\uniclasscentro\img\solteiro_standard_g01.jpg" />
+    <Content Include="Content\uniclasscentro\img\solteiro_standard_g02.jpg" />
+    <Content Include="Content\uniclasscentro\img\solteiro_standard_g03.jpg" />
+    <Content Include="Content\uniclasscentro\img\triplo_standard_g01.jpg" />
+    <Content Include="Content\uniclasscentro\img\triplo_standard_g02.jpg" />
+    <Content Include="Content\uniclasscentro\img\triplo_standard_g03.jpg" />
+    <Content Include="Content\uniclasspinheiros\css\tema.css" />
+    <Content Include="Content\uniclasspinheiros\img\carnaval-2016.jpg" />
+    <Content Include="Content\uniclasspinheiros\img\duplo_standard_g01.jpg" />
+    <Content Include="Content\uniclasspinheiros\img\duplo_standard_g02.jpg" />
+    <Content Include="Content\uniclasspinheiros\img\duplo_standard_g03.jpg" />
+    <Content Include="Content\uniclasspinheiros\img\hotel-1.jpg" />
+    <Content Include="Content\uniclasspinheiros\img\logo.png" />
+    <Content Include="Content\uniclasspinheiros\img\pascoa-2016.jpg" />
+    <Content Include="Content\uniclasspinheiros\img\sobre-1.jpg" />
+    <Content Include="Content\uniclasspinheiros\img\solteiro_standard_g01.jpg" />
+    <Content Include="Content\uniclasspinheiros\img\solteiro_standard_g02.jpg" />
+    <Content Include="Content\uniclasspinheiros\img\solteiro_standard_g03.jpg" />
+    <Content Include="Content\uniclasspinheiros\img\triplo_standard_g01.jpg" />
+    <Content Include="Content\uniclasspinheiros\img\triplo_standard_g02.jpg" />
+    <Content Include="Content\uniclasspinheiros\img\triplo_standard_g03.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Content\global\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\global\fonts\glyphicons-halflings-regular.svg" />
@@ -507,6 +542,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607270056218_Add WrPesquisa.resx">
       <DependentUpon>201607270056218_Add WrPesquisa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607312212368_RemoveChegadaSaida.resx">
+      <DependentUpon>201607312212368_RemoveChegadaSaida.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
