@@ -164,10 +164,43 @@
                                             Cartão de crédito
                                         </label>
                                         <img src="~/Content/global/img/icon-card.jpg" />
-                                        <div id="srCbCc" ng-show="srForm.tipoPagamento == 2">
-                                            <label>Número<sup>*</sup></label>
-                                            <input type="text" class="input-text" name="srNumeroCc" ng-model="srForm.numeroCartaoCredito" ng-required="srForm.tipoPagamento == 2" data-mask="0000 0000 0000 0000" data-mask-clearifnotmatch="true">
-                                            <span class="text-danger" ng-show="srForm.tipoPagamento == 2">Obrigatório</span>
+                                        <div id="info-cartao" ng-show="srForm.tipoPagamento == 2">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <label>Nome (igual ao cartão)<sup>*</sup></label>
+                                                    <input type="text" class="input-text" name="srNomeCc" ng-model="srForm.ccNomeTitular">
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <label>Número<sup>*</sup></label>
+                                                    <input type="text" class="input-text" name="srNumeroCc" ng-model="srForm.ccNumero" data-mask="0000 0000 0000 0099" data-mask-clearifnotmatch="true">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-4">
+                                                    <label>Tipo<sup>*</sup></label>
+                                                    <select class="awe-select" name="srTipoCc" ng-model="srForm.ccTipo">
+                                                        <option value="">Selecione</option>
+                                                        <option value="1">Visa</option>
+                                                        <option value="2">Mastercard</option>
+                                                        <option value="3">Elo</option>
+                                                        <option value="4">Amex</option>
+                                                        <option value="5">Diners</option>
+                                                        <option value="6">Maestro</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <label>Mês<sup>*</sup></label>
+                                                    <input type="text" class="input-text" placeholder="Mês" name="srMesCc" ng-model="srForm.ccValidadeMes" data-mask="00" data-mask-clearifnotmatch="true">
+                                                </div>
+                                                <div class="col-sm-2">
+                                                    <label>Ano<sup>*</sup></label>
+                                                    <input type="text" class="input-text" placeholder="Ano" name="srAnoCc" ng-model="srForm.ccValidadeAno" data-mask="0000" data-mask-clearifnotmatch="true">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label>Código<sup>*</sup></label>
+                                                    <input type="text" class="input-text" name="srCodigoCc" ng-model="srForm.ccCodigoSeguranca" data-mask="0009" data-mask-clearifnotmatch="true">
+                                                </div>
+                                            </div>
                                         </div>
                                     </li>
                                 </ul>

@@ -182,6 +182,27 @@ namespace WebReserva.Migrations
                     Instagram = "",
                     Telefone = "(92) 3663-1213",
                     LatitudeLongitude = "-3.106404, -60.011149"
+                },
+                new WrHotel
+                {
+                    Id = 9,
+                    Descricao = "<p>A Pousada Santa Fé de Penedo é gerenciada e administrada pela própria família. Toda a Pousada tem uma espetacular vista panorâmica da Serra da Mantiqueira e sua arquitetura clássica Mexicana é um oásis na vida moderna.</p><p>Você encontrará aqui uma beleza esplêndida. Não hesite em nos visitar para férias ou para aquela quebra na rotina! Você não vai se decepcionar.</p><p>A natureza é o maior atrativo de Penedo com suas cachoeiras e vistas! Mas a única colônia finlandesa do Brasil também possui outros atrativos que vão lhe deixar com água na boca.</p>",
+                    Nome = "Santa Fé de Penedo",
+                    HostUrl = "santafepenedo",
+                    ImgLogo = "/Content/santafepenedo/img/logo.png",
+                    ImgSobre01 = "/Content/santafepenedo/img/sobre-1.jpg",
+                    ImgSobre02 = "/Content/santafepenedo/img/sobre-2.jpg",
+                    ImgSobre03 = "/Content/santafepenedo/img/sobre-3.jpg",
+                    MaxAdultos = 4,
+                    MaxCriancas = 4,
+                    Tema = "/Content/santafepenedo/css/tema.css",
+                    EmailAdministrador = "bugasmarcondes@gmail.com",
+                    MsgCustomizadaEmail = "MsgCustomizadaEmail Santa Fé de Penedo",
+                    Facebook = "http://www.facebook.com/PousadaSantaFeDePenedo",
+                    Twitter = "",
+                    Instagram = "",
+                    Telefone = "(24) 3351-2308",
+                    LatitudeLongitude = "-22.426096, -44.546859"
                 }
             );
 
@@ -309,7 +330,7 @@ namespace WebReserva.Migrations
                     Descricao = "Venha curtir o Carnaval 2016 com a gente!",
                     DescricaoSlider = "Caia na folia!",
                     Mensagem = "Mensagem do pacote de Carnaval",
-                    Img01 = "/Content/areiaquecanta/img/carnaval-2016.jpg",
+                    Img01 = "/Content/uniclasscentro/img/carnaval-2016.jpg",
                     Valor = 300,
                     WrHotelId = 5
                 },
@@ -323,7 +344,7 @@ namespace WebReserva.Migrations
                     Descricao = "Venha curtir a Páscoa 2016 com a gente!",
                     DescricaoSlider = "Celebração cristã!",
                     Mensagem = "Mensagem do pacote de Páscoa",
-                    Img01 = "/Content/areiaquecanta/img/pascoa-2016.jpg",
+                    Img01 = "/Content/uniclasscentro/img/pascoa-2016.jpg",
                     Valor = 400,
                     WrHotelId = 5
                 },
@@ -337,7 +358,7 @@ namespace WebReserva.Migrations
                     Descricao = "Venha curtir o Carnaval 2016 com a gente!",
                     DescricaoSlider = "Caia na folia!",
                     Mensagem = "Mensagem do pacote de Carnaval",
-                    Img01 = "/Content/areiaquecanta/img/carnaval-2016.jpg",
+                    Img01 = "/Content/uniclasspinheiros/img/carnaval-2016.jpg",
                     Valor = 300,
                     WrHotelId = 6
                 },
@@ -351,7 +372,7 @@ namespace WebReserva.Migrations
                     Descricao = "Venha curtir a Páscoa 2016 com a gente!",
                     DescricaoSlider = "Celebração cristã!",
                     Mensagem = "Mensagem do pacote de Páscoa",
-                    Img01 = "/Content/areiaquecanta/img/pascoa-2016.jpg",
+                    Img01 = "/Content/uniclasspinheiros/img/pascoa-2016.jpg",
                     Valor = 400,
                     WrHotelId = 6
                 },
@@ -365,7 +386,7 @@ namespace WebReserva.Migrations
                     Descricao = "Venha curtir o Carnaval 2016 com a gente!",
                     DescricaoSlider = "Caia na folia!",
                     Mensagem = "Mensagem do pacote de Carnaval",
-                    Img01 = "/Content/areiaquecanta/img/carnaval-2016.jpg",
+                    Img01 = "/Content/vinhedoplazahotel/img/carnaval-2016.jpg",
                     Valor = 300,
                     WrHotelId = 7
                 },
@@ -379,7 +400,7 @@ namespace WebReserva.Migrations
                     Descricao = "Venha curtir a Páscoa 2016 com a gente!",
                     DescricaoSlider = "Celebração cristã!",
                     Mensagem = "Mensagem do pacote de Páscoa",
-                    Img01 = "/Content/areiaquecanta/img/pascoa-2016.jpg",
+                    Img01 = "/Content/vinhedoplazahotel/img/pascoa-2016.jpg",
                     Valor = 400,
                     WrHotelId = 7
                 },
@@ -393,7 +414,7 @@ namespace WebReserva.Migrations
                     Descricao = "Venha curtir o Carnaval 2016 com a gente!",
                     DescricaoSlider = "Caia na folia!",
                     Mensagem = "Mensagem do pacote de Carnaval",
-                    Img01 = "/Content/areiaquecanta/img/carnaval-2016.jpg",
+                    Img01 = "/Content/davincihotel/img/carnaval-2016.jpg",
                     Valor = 300,
                     WrHotelId = 8
                 },
@@ -407,12 +428,39 @@ namespace WebReserva.Migrations
                     Descricao = "Venha curtir a Páscoa 2016 com a gente!",
                     DescricaoSlider = "Celebração cristã!",
                     Mensagem = "Mensagem do pacote de Páscoa",
-                    Img01 = "/Content/areiaquecanta/img/pascoa-2016.jpg",
+                    Img01 = "/Content/davincihotel/img/pascoa-2016.jpg",
                     Valor = 400,
                     WrHotelId = 8
+                },
+                new WrBloqueioData
+                {
+                    Id = 15,
+                    Inicio = new DateTime(2016, 10, 06),
+                    Fim = new DateTime(2016, 10, 10),
+                    Pacote = true,
+                    Titulo = "Carnaval",
+                    Descricao = "Venha curtir o Carnaval 2016 com a gente!",
+                    DescricaoSlider = "Caia na folia!",
+                    Mensagem = "Mensagem do pacote de Carnaval",
+                    Img01 = "/Content/santafepenedo/img/carnaval-2016.jpg",
+                    Valor = 300,
+                    WrHotelId = 9
+                },
+                new WrBloqueioData
+                {
+                    Id = 16,
+                    Inicio = new DateTime(2016, 11, 25),
+                    Fim = new DateTime(2016, 11, 27),
+                    Pacote = true,
+                    Titulo = "Páscoa",
+                    Descricao = "Venha curtir a Páscoa 2016 com a gente!",
+                    DescricaoSlider = "Celebração cristã!",
+                    Mensagem = "Mensagem do pacote de Páscoa",
+                    Img01 = "/Content/santafepenedo/img/pascoa-2016.jpg",
+                    Valor = 400,
+                    WrHotelId = 9
                 }
             );
-
             context.WrTipoApartamentos.AddOrUpdate(
                 a => a.Id,
                 new WrTipoApartamento
@@ -623,6 +671,215 @@ namespace WebReserva.Migrations
                     OpcionalDescricao03 = "",
                     IdLetoh = 0,
                     WrHotelId = 6
+                },
+                new WrTipoApartamento
+                {
+                    Id = 12,
+                    Nome = "Apartamento",
+                    Descricao = "Quarto com camal de casal ou solteiro.",
+                    DestaqueTitulo = "TV LCD com tela plana de 32”  com 43 canais",
+                    DestaqueDescricao = "",
+                    Img01 = "/Content/vinhedoplazahotel/img/apartamento_g01.jpg",
+                    Img02 = "/Content/vinhedoplazahotel/img/apartamento_g02.jpg",
+                    Img03 = "/Content/vinhedoplazahotel/img/apartamento_g03.jpg",
+                    OpcionalTitulo01 = "Cofre digital, frigobar, ar-condicionado",
+                    OpcionalDescricao01 = "Acesso a internet banda larga e wi-fi",
+                    OpcionalTitulo02 = "Workstation, ducha com aquecimento central",
+                    OpcionalDescricao02 = "Secador de cabelos",
+                    OpcionalTitulo03 = "Cortinas com blackout, Cartão de controle de energia",
+                    OpcionalDescricao03 = "Fechadura eletrônica",
+                    IdLetoh = 0,
+                    WrHotelId = 7
+                },
+                new WrTipoApartamento
+                {
+                    Id = 13,
+                    Nome = "Bangalô",
+                    Descricao = "Hospedagem para 5 pessoas: temos 2 Bangalôs que acomodam a 5ª pessoa no sofá cama da sala.",
+                    DestaqueTitulo = "2 quartos",
+                    DestaqueDescricao = "(sendo um deles uma suíte)",
+                    Img01 = "/Content/vinhedoplazahotel/img/bangalo_g01.jpg",
+                    Img02 = "/Content/vinhedoplazahotel/img/bangalo_g02.jpg",
+                    Img03 = "/Content/vinhedoplazahotel/img/bangalo_g03.jpg",
+                    OpcionalTitulo01 = "Cozinha equipada com microondas, geladeira, fogão e utensílios de cozinha",
+                    OpcionalDescricao01 = "Banheiro social, ducha elétrica, secador de cabelos",
+                    OpcionalTitulo02 = "TV LCD com tela plana de 32\" com 43 canais",
+                    OpcionalDescricao02 = "Sala de TV e de jantar, cofre digital",
+                    OpcionalTitulo03 = "Permitida a entrada de cães somente nos Bangalôs (não aceitamos gatos)",
+                    OpcionalDescricao03 = "Cortinas com blackout, garagem privativa",
+                    IdLetoh = 0,
+                    WrHotelId = 7
+                },
+                new WrTipoApartamento
+                {
+                    Id = 14,
+                    Nome = "Suíte Presidencial",
+                    Descricao = "Pacote especial para noite de núpcias.",
+                    DestaqueTitulo = "TV LCD com tela plana de 42\" com 43 canais. Cama king size.",
+                    DestaqueDescricao = "Cofre digital",
+                    Img01 = "/Content/vinhedoplazahotel/img/suitepresidencial_g01.jpg",
+                    Img02 = "/Content/vinhedoplazahotel/img/suitepresidencial_g02.jpg",
+                    Img03 = "/Content/vinhedoplazahotel/img/suitepresidencial_g03.jpg",
+                    OpcionalTitulo01 = "Frigobar, ar-condicionado",
+                    OpcionalDescricao01 = "Terraço",
+                    OpcionalTitulo02 = "Acesso a internet banda larga e wi-fi",
+                    OpcionalDescricao02 = "Workstation, cartão de controle de energia, fechadura eletrônica",
+                    OpcionalTitulo03 = "Ducha com aquecimento central",
+                    OpcionalDescricao03 = "Secador de cabelos, banheira hidromassagem, cortinas com blackout",
+                    IdLetoh = 0,
+                    WrHotelId = 7
+                },
+                new WrTipoApartamento
+                {
+                    Id = 15,
+                    Nome = "Standard",
+                    Descricao = "Quarto padrão",
+                    DestaqueTitulo = "Ar-condicionado",
+                    DestaqueDescricao = "(quente e frio)",
+                    Img01 = "/Content/santafepenedo/img/standard_g01.jpg",
+                    Img02 = "/Content/santafepenedo/img/standard_g02.jpg",
+                    Img03 = "/Content/santafepenedo/img/standard_g03.jpg",
+                    OpcionalTitulo01 = "Secador de cabelo",
+                    OpcionalDescricao01 = "",
+                    OpcionalTitulo02 = "Chuveiro pressurizado à gas",
+                    OpcionalDescricao02 = "",
+                    OpcionalTitulo03 = "Tv lcd Tela Plana",
+                    OpcionalDescricao03 = "",
+                    IdLetoh = 0,
+                    WrHotelId = 9
+                },
+                new WrTipoApartamento
+                {
+                    Id = 16,
+                    Nome = "Suíte Luxo",
+                    Descricao = "Quarto de luxo",
+                    DestaqueTitulo = "Ar-condicionado split (quente e frio)",
+                    DestaqueDescricao = "TV LCD Tela Plana Por Assinatura",
+                    Img01 = "/Content/santafepenedo/img/suite_luxo_g01.jpg",
+                    Img02 = "/Content/santafepenedo/img/suite_luxo_g02.jpg",
+                    Img03 = "/Content/santafepenedo/img/suite_luxo_g03.jpg",
+                    OpcionalTitulo01 = "Secador de cabelo",
+                    OpcionalDescricao01 = "",
+                    OpcionalTitulo02 = "Frigobar",
+                    OpcionalDescricao02 = "",
+                    OpcionalTitulo03 = "Chuveiro pressurizado à gas",
+                    OpcionalDescricao03 = "",
+                    IdLetoh = 0,
+                    WrHotelId = 9
+                },
+                new WrTipoApartamento
+                {
+                    Id = 17,
+                    Nome = "Suíte Luxo com varanda",
+                    Descricao = "Quarto possui varanda com rede",
+                    DestaqueTitulo = "Ar-condicionado split (quente e frio)",
+                    DestaqueDescricao = "TV LCD Tela Plana Por Assinatura",
+                    Img01 = "/Content/santafepenedo/img/suite_luxo_v_g01.jpg",
+                    Img02 = "/Content/santafepenedo/img/suite_luxo_v_g02.jpg",
+                    Img03 = "/Content/santafepenedo/img/suite_luxo_v_g03.jpg",
+                    OpcionalTitulo01 = "Secador de cabelo",
+                    OpcionalDescricao01 = "",
+                    OpcionalTitulo02 = "Frigobar",
+                    OpcionalDescricao02 = "",
+                    OpcionalTitulo03 = "Chuveiro pressurizado à gas",
+                    OpcionalDescricao03 = "",
+                    IdLetoh = 0,
+                    WrHotelId = 9
+                },
+                new WrTipoApartamento
+                {
+                    Id = 18,
+                    Nome = "Suíte Super Luxo",
+                    Descricao = "Quarto super luxo, TV com mais de 100 canais",
+                    DestaqueTitulo = "Ar-condicionado split (quente e frio)",
+                    DestaqueDescricao = "TV LCD Tela Plana com mais de 100 canais",
+                    Img01 = "/Content/santafepenedo/img/suite_super_luxo_g01.jpg",
+                    Img02 = "/Content/santafepenedo/img/suite_super_luxo_g02.jpg",
+                    Img03 = "/Content/santafepenedo/img/suite_super_luxo_g03.jpg",
+                    OpcionalTitulo01 = "Secador de cabelo",
+                    OpcionalDescricao01 = "",
+                    OpcionalTitulo02 = "Frigobar",
+                    OpcionalDescricao02 = "",
+                    OpcionalTitulo03 = "Chuveiro pressurizado à gas",
+                    OpcionalDescricao03 = "",
+                    IdLetoh = 0,
+                    WrHotelId = 9
+                },
+                new WrTipoApartamento
+                {
+                    Id = 19,
+                    Nome = "Suíte Super Luxo Especial",
+                    Descricao = "Quarto com varanda privative com rede",
+                    DestaqueTitulo = "Ar-condicionado split (quente e frio)",
+                    DestaqueDescricao = "TV LCD Tela Plana Por Assinatura",
+                    Img01 = "/Content/santafepenedo/img/suite_super_luxo_e_g01.jpg",
+                    Img02 = "/Content/santafepenedo/img/suite_super_luxo_e_g02.jpg",
+                    Img03 = "/Content/santafepenedo/img/suite_super_luxo_e_g03.jpg",
+                    OpcionalTitulo01 = "Secador de cabelo",
+                    OpcionalDescricao01 = "",
+                    OpcionalTitulo02 = "Frigobar",
+                    OpcionalDescricao02 = "",
+                    OpcionalTitulo03 = "Chuveiro pressurizado à gas",
+                    OpcionalDescricao03 = "",
+                    IdLetoh = 0,
+                    WrHotelId = 9
+                },
+                new WrTipoApartamento
+                {
+                    Id = 20,
+                    Nome = "Apartamento Luxo",
+                    Descricao = "Quarto e sala",
+                    DestaqueTitulo = "Ar-condicionado split (quente e frio)",
+                    DestaqueDescricao = "TV LCD Tela Plana HD com mais de 100 canais",
+                    Img01 = "/Content/santafepenedo/img/apartamento_luxo_g01.jpg",
+                    Img02 = "/Content/santafepenedo/img/apartamento_luxo_g02.jpg",
+                    Img03 = "/Content/santafepenedo/img/apartamento_luxo_g03.jpg",
+                    OpcionalTitulo01 = "Cama king",
+                    OpcionalDescricao01 = "",
+                    OpcionalTitulo02 = "Chuveiro pressurizado à gas",
+                    OpcionalDescricao02 = "",
+                    OpcionalTitulo03 = "Frigobar",
+                    OpcionalDescricao03 = "",
+                    IdLetoh = 0,
+                    WrHotelId = 9
+                },
+                new WrTipoApartamento
+                {
+                    Id = 21,
+                    Nome = "Apartamento Master",
+                    Descricao = "Quarto e sala",
+                    DestaqueTitulo = "Banheira de hidromassagem",
+                    DestaqueDescricao = "Cama king",
+                    Img01 = "/Content/santafepenedo/img/apartamento_master_g01.jpg",
+                    Img02 = "/Content/santafepenedo/img/apartamento_master_g02.jpg",
+                    Img03 = "/Content/santafepenedo/img/apartamento_master_g03.jpg",
+                    OpcionalTitulo01 = "Ar-condicionado split (quente e frio)",
+                    OpcionalDescricao01 = "TV LCD Tela Plana HD com mais de 100 canais",
+                    OpcionalTitulo02 = "Chuveiro pressurizado à gas",
+                    OpcionalDescricao02 = "Secador de cabelo",
+                    OpcionalTitulo03 = "Frigobar",
+                    OpcionalDescricao03 = "",
+                    IdLetoh = 0,
+                    WrHotelId = 9
+                },
+                new WrTipoApartamento
+                {
+                    Id = 22,
+                    Nome = "Suíte Master",
+                    Descricao = "Quarto com varanda e banheira",
+                    DestaqueTitulo = "Banheira de hidromassagem",
+                    DestaqueDescricao = "Varanda  privative",
+                    Img01 = "/Content/santafepenedo/img/suite_master_g01.jpg",
+                    Img02 = "/Content/santafepenedo/img/suite_master_g02.jpg",
+                    Img03 = "/Content/santafepenedo/img/suite_master_g03.jpg",
+                    OpcionalTitulo01 = "Ar-condicionado split (quente e frio)",
+                    OpcionalDescricao01 = "TV LCD Tela Plana HD com mais de 100 canais",
+                    OpcionalTitulo02 = "Chuveiro pressurizado à gas",
+                    OpcionalDescricao02 = "Secador de cabelo",
+                    OpcionalTitulo03 = "Frigobar",
+                    OpcionalDescricao03 = "",
+                    IdLetoh = 0,
+                    WrHotelId = 9
                 }
             );
         }

@@ -264,6 +264,10 @@
     <Compile Include="Migrations\201607312239479_AddTipoPagamento.Designer.cs">
       <DependentUpon>201607312239479_AddTipoPagamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608152354072_WrReserva+InformacaoCc.cs" />
+    <Compile Include="Migrations\201608152354072_WrReserva+InformacaoCc.Designer.cs">
+      <DependentUpon>201608152354072_WrReserva+InformacaoCc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\WrBloqueioData.cs" />
     <Compile Include="Models\WrDisponibilidade.cs" />
@@ -424,6 +428,38 @@
     <Content Include="Content\sanjaya\img\sobre-2.jpg" />
     <Content Include="Content\sanjaya\img\sobre-3.jpg" />
     <Content Include="Content\sanjaya\img\tiradentes-2016.jpg" />
+    <Content Include="Content\santafepenedo\css\tema.css" />
+    <Content Include="Content\santafepenedo\img\apartamento_luxo_g01.JPG" />
+    <Content Include="Content\santafepenedo\img\apartamento_luxo_g02.JPG" />
+    <Content Include="Content\santafepenedo\img\apartamento_luxo_g03.JPG" />
+    <Content Include="Content\santafepenedo\img\apartamento_master_g01.JPG" />
+    <Content Include="Content\santafepenedo\img\apartamento_master_g02.jpg" />
+    <Content Include="Content\santafepenedo\img\apartamento_master_g03.JPG" />
+    <Content Include="Content\santafepenedo\img\carnaval-2016.jpg" />
+    <Content Include="Content\santafepenedo\img\hotel-1.jpg" />
+    <Content Include="Content\santafepenedo\img\logo.png" />
+    <Content Include="Content\santafepenedo\img\pascoa-2016.jpg" />
+    <Content Include="Content\santafepenedo\img\sobre-1.jpg" />
+    <Content Include="Content\santafepenedo\img\sobre-2.jpg" />
+    <Content Include="Content\santafepenedo\img\sobre-3.jpg" />
+    <Content Include="Content\santafepenedo\img\standard_g01.JPG" />
+    <Content Include="Content\santafepenedo\img\standard_g02.JPG" />
+    <Content Include="Content\santafepenedo\img\standard_g03.JPG" />
+    <Content Include="Content\santafepenedo\img\suite_luxo_g01.JPG" />
+    <Content Include="Content\santafepenedo\img\suite_luxo_g02.JPG" />
+    <Content Include="Content\santafepenedo\img\suite_luxo_g03.JPG" />
+    <Content Include="Content\santafepenedo\img\suite_luxo_v_g01.JPG" />
+    <Content Include="Content\santafepenedo\img\suite_luxo_v_g02.JPG" />
+    <Content Include="Content\santafepenedo\img\suite_luxo_v_g03.JPG" />
+    <Content Include="Content\santafepenedo\img\suite_master_g01.jpg" />
+    <Content Include="Content\santafepenedo\img\suite_master_g02.jpg" />
+    <Content Include="Content\santafepenedo\img\suite_master_g03.jpg" />
+    <Content Include="Content\santafepenedo\img\suite_super_luxo_e_g01.JPG" />
+    <Content Include="Content\santafepenedo\img\suite_super_luxo_e_g02.JPG" />
+    <Content Include="Content\santafepenedo\img\suite_super_luxo_e_g03.JPG" />
+    <Content Include="Content\santafepenedo\img\suite_super_luxo_g01.JPG" />
+    <Content Include="Content\santafepenedo\img\suite_super_luxo_g02.JPG" />
+    <Content Include="Content\santafepenedo\img\suite_super_luxo_g03.JPG" />
     <Content Include="Content\uniclasscentro\css\tema.css" />
     <Content Include="Content\uniclasscentro\img\carnaval-2016.jpg" />
     <Content Include="Content\uniclasscentro\img\duplo_standard_g01.jpg" />
@@ -454,6 +490,23 @@
     <Content Include="Content\uniclasspinheiros\img\triplo_standard_g01.jpg" />
     <Content Include="Content\uniclasspinheiros\img\triplo_standard_g02.jpg" />
     <Content Include="Content\uniclasspinheiros\img\triplo_standard_g03.jpg" />
+    <Content Include="Content\vinhedoplazahotel\css\tema.css" />
+    <Content Include="Content\vinhedoplazahotel\img\apartamento_g01.jpg" />
+    <Content Include="Content\vinhedoplazahotel\img\apartamento_g02.jpg" />
+    <Content Include="Content\vinhedoplazahotel\img\apartamento_g03.jpg" />
+    <Content Include="Content\vinhedoplazahotel\img\bangalo_g01.jpg" />
+    <Content Include="Content\vinhedoplazahotel\img\bangalo_g02.jpg" />
+    <Content Include="Content\vinhedoplazahotel\img\bangalo_g03.jpg" />
+    <Content Include="Content\vinhedoplazahotel\img\carnaval-2016.jpg" />
+    <Content Include="Content\vinhedoplazahotel\img\hotel-1.jpg" />
+    <Content Include="Content\vinhedoplazahotel\img\logo.png" />
+    <Content Include="Content\vinhedoplazahotel\img\pascoa-2016.jpg" />
+    <Content Include="Content\vinhedoplazahotel\img\sobre-1.jpg" />
+    <Content Include="Content\vinhedoplazahotel\img\sobre-2.jpg" />
+    <Content Include="Content\vinhedoplazahotel\img\sobre-3.jpg" />
+    <Content Include="Content\vinhedoplazahotel\img\suitepresidencial_g01.jpg" />
+    <Content Include="Content\vinhedoplazahotel\img\suitepresidencial_g02.jpg" />
+    <Content Include="Content\vinhedoplazahotel\img\suitepresidencial_g03.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Content\global\fonts\fontawesome-webfont.svg" />
     <Content Include="Content\global\fonts\glyphicons-halflings-regular.svg" />
@@ -553,6 +606,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607312239479_AddTipoPagamento.resx">
       <DependentUpon>201607312239479_AddTipoPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608152354072_WrReserva+InformacaoCc.resx">
+      <DependentUpon>201608152354072_WrReserva+InformacaoCc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

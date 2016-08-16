@@ -4,38 +4,38 @@
 #footer .footer_top,
 .ui-datepicker .ui-datepicker-calendar thead th,
 .bootstrap-select.btn-group.awe-select .dropdown-menu ul li.selected a,
-.reservation-room-seleted_total { background-color: #0983C4; }
+.reservation-room-seleted_total { background-color: #177340; }
 .bootstrap-select.btn-group.awe-select .dropdown-menu ul li a:hover,
 .ui-datepicker .ui-datepicker-calendar td a.ui-state-active,
 .ui-datepicker .ui-datepicker-calendar td a:hover,
 .ui-datepicker .ui-datepicker-header,
-#footer { background-color:#54D194; }
+#footer { background-color:#B9371D; }
 .ui-datepicker .ui-datepicker-calendar thead th,
 #footer .footer_bottom,
 #footer .footer_center .widget-logo .text p,
 #footer .footer_center .widget-logo .text p a { color: #fff; }
 .preloader-dot,
 .bootstrap-select.btn-group.awe-select .dropdown-menu ul li a:hover,
-.bootstrap-select.btn-group.awe-select .dropdown-menu ul li.selected a { border-color: #54D194; }
+.bootstrap-select.btn-group.awe-select .dropdown-menu ul li.selected a { border-color: #B9371D; }
 .room_item-6 .text .price { color: #333; }
 .contact .contact-form .field-text,
-.contact .contact-form .field-textarea { border-color: #0983C4; }
-.awe-btn.awe-btn-13:hover { border-color: #54D194; background-color: #54D194; }
+.contact .contact-form .field-textarea { border-color: #177340; }
+.awe-btn.awe-btn-13:hover { border-color: #B9371D; background-color: #B9371D; }
 .header_content,
-.check-availability:before { background-color: #0983C4; }
+.check-availability:before { background-color: #177340; }
 
-.hotel-1 { background-image: url(/Content/vinhedoplazahotel/img/hotel-1.jpg); background-size: cover; }
+.hotel-1 { background-image: url(/Content/santafepenedo/img/hotel-1.jpg); background-size: cover; }
 
 .fundo-1 { background-color: #f1f1f1; }
 
 /*TODO remover a gambiarra e ajustar tamanho das imagens */
 .accomd-modations-content .accomd-modations-room { height: 200px; overflow: hidden; }
 
-.room_item-6 .text { background-color: #0983C4; }
+.room_item-6 .text { background-color: #177340; }
 .room-wrap-6 .room_item-6 { background-position: right; }
 .room_item-6 { background-size: initial; }
 
-.sub-banner .text h2 { background-color: #0983C4; display: inline-block; padding: 0 15px; }
+.sub-banner .text h2 { background-color: #177340; display: inline-block; padding: 0 15px; }
 
 @media screen and (max-width:991px) {
 	.home-about .text { margin-bottom: 30px; }

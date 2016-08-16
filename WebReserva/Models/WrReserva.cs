@@ -22,6 +22,11 @@ namespace WebReserva.Models
         public int WrTipoApartamentoId{ get; set; }
         public decimal ValorTotal { get; set; }
         public int TipoPagamento { get; set; }
-        public string NumeroCartaoCredito { get; set; }
+        public int CcTipo { get; set; }
+        public string CcNumero { get; set; }
+        public string CcNomeTitular { get; set; }
+        public int CcValidadeMes { get; set; }
+        public int CcValidadeAno { get; set; }
+        public int CcCodigoSeguranca { get; set; }
     }
 }

@@ -337,7 +337,12 @@ namespace WebReserva.EntityFramework
                     WrTipoApartamentoId = existingReservation.WrTipoApartamentoId,
                     ValorTotal = existingReservation.ValorTotal,
                     TipoPagamento = existingReservation.TipoPagamento,
-                    NumeroCartaoCredito = existingReservation.NumeroCartaoCredito
+                    CcTipo = existingReservation.CcTipo,
+                    CcNumero = existingReservation.CcNumero,
+                    CcNomeTitular = existingReservation.CcNomeTitular,
+                    CcValidadeMes = existingReservation.CcValidadeMes,
+                    CcValidadeAno = existingReservation.CcValidadeAno,
+                    CcCodigoSeguranca = existingReservation.CcCodigoSeguranca
                 };
 
                 _context.Entry(reserva).State = EntityState.Modified;
@@ -433,7 +438,7 @@ namespace WebReserva.EntityFramework
                     }
                     else if (existingReservation.TipoPagamento == 2)
                     {
-                        myMessage.Html += "				<td style=\"padding:0 15px;\">Cartão de crédito: " + existingReservation.NumeroCartaoCredito + "</td>";
+                        myMessage.Html += "				<td style=\"padding:0 15px;\">Cartão de crédito: " + existingReservation.CcNumero + "</td>";
                     }
 
                     myMessage.Html += "			</tr>";
