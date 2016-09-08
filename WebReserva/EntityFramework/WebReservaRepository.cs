@@ -350,7 +350,7 @@ namespace WebReserva.EntityFramework
                 if (_context.SaveChanges() > 0)
                 {
                     SendGridMessage myMessage = new SendGridMessage();
-                    myMessage.AddTo(wrHotel.EmailAdministrador);
+                    myMessage.AddTo(new List<string>() { wrHotel.EmailAdministrador, existingReservation.Email });
                     myMessage.From = new MailAddress("contato@webreserva.com", wrHotel.Nome);
                     myMessage.Subject = "Pré-reserva";
 
