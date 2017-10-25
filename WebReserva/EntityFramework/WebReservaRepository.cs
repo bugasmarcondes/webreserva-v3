@@ -180,6 +180,7 @@ namespace WebReserva.EntityFramework
         public List<SectionPackageViewModel> AlertIfPackageFound(SectionAvailabilityViewModel sectionAvailability)
         {
             var hostUrl = _context.WrHotels.FirstOrDefault(s => s.Id == sectionAvailability.WrHotelId);
+            var qtdDiasDesbloqueio = (sectionAvailability.CheckOut - sectionAvailability.CheckIn).TotalDays - 1;
 
             var bloqueios = (from a in _context.WrBloqueioDatas
                              where (sectionAvailability.CheckIn < a.Inicio &&
@@ -207,10 +208,16 @@ namespace WebReserva.EntityFramework
                                  HostUrl = hostUrl.HostUrl,
                                  Inicio = SqlFunctions.DateName("day", a.Inicio) + "/" + SqlFunctions.DatePart("month", a.Inicio) + "/" + SqlFunctions.DateName("year", a.Inicio),
                                  Fim = SqlFunctions.DateName("day", a.Fim) + "/" + SqlFunctions.DatePart("month", a.Fim) + "/" + SqlFunctions.DateName("year", a.Fim),
-                                 Adultos = 1
+                                 Adultos = 1,
+                                 QtdDiasDesbloqueio = a.QtdDiasDesbloqueio
                              }).ToList();
 
-            return bloqueios;
+            if (qtdDiasDesbloqueio < bloqueios.FirstOrDefault().QtdDiasDesbloqueio)
+            {
+                return bloqueios;
+            }
+
+            return null;
         }
 
         public List<SectionRoomViewModel> GetAvailability(SectionAvailabilityViewModel sectionAvailability)

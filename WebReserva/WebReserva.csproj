@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -267,6 +268,10 @@
     <Compile Include="Migrations\201608152354072_WrReserva+InformacaoCc.cs" />
     <Compile Include="Migrations\201608152354072_WrReserva+InformacaoCc.Designer.cs">
       <DependentUpon>201608152354072_WrReserva+InformacaoCc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710250050035_WrBloqueioData+QtdDiasDesbloqueio.cs" />
+    <Compile Include="Migrations\201710250050035_WrBloqueioData+QtdDiasDesbloqueio.Designer.cs">
+      <DependentUpon>201710250050035_WrBloqueioData+QtdDiasDesbloqueio.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\WrBloqueioData.cs" />
@@ -609,6 +614,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608152354072_WrReserva+InformacaoCc.resx">
       <DependentUpon>201608152354072_WrReserva+InformacaoCc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710250050035_WrBloqueioData+QtdDiasDesbloqueio.resx">
+      <DependentUpon>201710250050035_WrBloqueioData+QtdDiasDesbloqueio.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -59,7 +59,7 @@ namespace WebReserva.Controllers.Web
 
             var hasBloqueio = _repository.AlertIfPackageFound(sectionAvailability);
 
-            if (hasBloqueio.Count > 0)
+            if (hasBloqueio != null)
             {
                 page.HasBloqueio = true;
                 page.SectionPackage = hasBloqueio;

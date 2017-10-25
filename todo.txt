@@ -1,3 +1,0 @@
-PESQUISAR
-=========
-> Como fazer backup do banco na Azure

@@ -12,5 +12,6 @@ namespace WebReserva.ViewModels
         public string Inicio { get; set; }
         public string Fim { get; set; }
         public int Adultos { get; set; }
+        public int QtdDiasDesbloqueio { get; set; }
     }
 }

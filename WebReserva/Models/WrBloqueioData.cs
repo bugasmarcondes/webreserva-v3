@@ -25,5 +25,7 @@ namespace WebReserva.Models
         public string Img01 { get; set; }
 
         public decimal Valor { get; set; }
+
+        public int QtdDiasDesbloqueio { get; set; }
     }
 }
